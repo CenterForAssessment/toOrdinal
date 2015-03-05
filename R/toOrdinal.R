@@ -29,7 +29,7 @@ function(
 	}
 
 	if (toupper(language)=="FRENCH") {
-		if (cardinal_number==1) tmp.suffix <- "er" else tmp.suffix <- "e"
+		if (cardinal_number==1) tmp.suffix <- "i\u00E8re" else tmp.suffix <- "i\u00E8me"
 	}
 
 	if (toupper(language)=="TURKISH") {
