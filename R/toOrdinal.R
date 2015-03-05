@@ -3,10 +3,15 @@ function(
 	cardinal_number,
 	language="English") {
 
+	### Utility function
+
 	strtail <- function(s, n=1) {
 		if(n < 0) substring(s, 1-n)
 		else substring(s, nchar(s)-n+1)
 	}
+
+
+	### ENGLISH
 
 	if (toupper(language)=="ENGLISH") {
 		tmp <- strtail(as.character(cardinal_number), 2)
@@ -23,14 +28,32 @@ function(
 		if (tmp %in% c('0', paste(0:9, 0, sep=""))) tmp.suffix <- "th"
 	}
 
+
+	### FRENCH
+
+	if (toupper(language)=="FRENCH") {
+		if (cardinal_number==1) tmp.suffix <- "re" else tmp.suffix <- "e"
+	}
+
+
+	### GERMAN
+
 	if (toupper(language)=="GERMAN") {
 		if (cardinal_number >=1 & cardinal_number <= 19) tmp.suffix <- "te"
 		if (cardinal_number >= 20) tmp.suffix <- "ste"
 	}
 
-	if (toupper(language)=="FRENCH") {
-		if (cardinal_number==1) tmp.suffix <- "i\u00E8re" else tmp.suffix <- "i\u00E8me"
+
+	### SPANISH
+
+	if (toupper(language)=="SPANISH") {
+		tmp <- strtail(as.character(cardinal_number), 1)
+		if (tmp %in% c('1', '3')) tmp.suffix <- ".er"
+		if (tmp %in% c('0', '2', '4', '5', '6', '7', '8', '9')) tmp.suffix <- ".\u00BA"
 	}
+
+
+	### TURKISH
 
 	if (toupper(language)=="TURKISH") {
 	}
