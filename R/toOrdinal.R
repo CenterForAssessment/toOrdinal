@@ -31,6 +31,9 @@ function(
 	if (toupper(language)=="FRENCH") {
 		if (cardinal_number==1) tmp.suffix <- "er" else tmp.suffix <- "e"
 	}
+
+	if (toupper(language)=="TURKISH") {
+	}
 	
 	return(paste(cardinal_number, tmp.suffix, sep=""))
 } ### END toOrdinal
