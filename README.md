@@ -1,2 +1,30 @@
-# toOrdinal
-R package to convert cardinal to ordinal number equivalent
+toOrdinal
+===========
+
+Cardinal to ordinal number function
+---------------------------------------
+
+The function **toOrdinal** is used to convert a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th). Because such conversions are language specific, feel free to clone and make
+a pull request with the additional specifications for other languages. 
+
+To install the latest stable release from [CRAN](http://cran.r-project.org/package=toOrdinal)
+---------------------------
+
+```R
+install.packages("toOrdinal")
+require(toOrdinal)
+```
+
+
+Install latest development release from [Github](https://github.com/CenterForAssessment/toOrdinal/) :octocat:
+----------------------------------------------
+
+```R
+install.packages("devtools")
+require(devtools)
+install_github("CenterForAssessment/toOrdinal")
+require(toOrdinal)
+```
+
+To install from Github you might need: Windows: Rtools (http://cran.r-project.org/bin/windows/Rtools/), OS X: xcode (from the app store),
+Linux: apt-get install r-base-dev (or similar).
