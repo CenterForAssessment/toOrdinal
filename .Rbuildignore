@@ -1,1 +1,4 @@
-^\.travis\.yml$
+.git
+.gitignore
+README.md
+.travis.yml
