@@ -12,7 +12,7 @@ Currently the package implements English, French and German. For example,
 
 * English: toOrdinal(1) returns '1st'
 * German: toOrdinal(1, language="German") returns '1te'
-* French: toOrdinal(1, language="French") returns '1er'
+* French: toOrdinal(1, language="French") returns '1re'
 
 To install the latest stable release from [CRAN](http://cran.r-project.org/package=toOrdinal)
 ---------------------------
