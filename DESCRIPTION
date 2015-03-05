@@ -5,7 +5,8 @@ Title: Function for converting cardinal to ordinal numbers for use with multiple
 Depends: R (>= 2.10.0) 
 Author: Damian W. Betebenner <dbetebenner@nciea.org>
 Maintainer: Damian W. Betebenner <dbetebenner@nciea.org>
-Description: Function for Function for converting cardinal to ordinal numbers for use with multiple languages.  
+Description: Function for Function for converting cardinal to ordinal numbers for use with multiple languages.
+BugReports: https://github.com/CenterForAssessment/toOrdinal/issues
 LazyLoad: Yes
 ByteCompile: TRUE
 License: GPL-3 

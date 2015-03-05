@@ -8,7 +8,7 @@ function(
 		else substring(s, nchar(s)-n+1)
 	}
 
-	if (language=="English") {
+	if (toupper(language)=="ENGLISH") {
 		tmp <- strtail(as.character(cardinal_number), 2)
 		if (tmp %in% c('1', paste(c(0, 2:9), 1, sep=""))) tmp.suffix <- "st"
 		if (tmp %in% c('2', paste(c(0, 2:9), 2, sep=""))) tmp.suffix <- "nd"
@@ -23,12 +23,12 @@ function(
 		if (tmp %in% c('0', paste(0:9, 0, sep=""))) tmp.suffix <- "th"
 	}
 
-	if (language=="German") {
+	if (toupper(language)=="GERMAN") {
 		if (cardinal_number >=1 & cardinal_number <= 19) tmp.suffix <- "te"
 		if (cardinal_number >= 20) tmp.suffix <- "ste"
 	}
 
-	if (language=="French") {
+	if (toupper(language)=="FRENCH") {
 		if (cardinal_number==1) tmp.suffix <- "er" else tmp.suffix <- "e"
 	}
 	
