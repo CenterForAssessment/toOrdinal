@@ -13,7 +13,7 @@ toOrdinal(
 }
 
 \arguments{
-  \item{n}{Postive integer (cardinal number) to be converted to an ordinal number. For example 1 becomes 1st, 2 becomes 2nd, ...
+  \item{cardinal_number}{Postive integer (cardinal number) to be converted to an ordinal number. For example 1 becomes 1st, 2 becomes 2nd, ...
   }
   \item{language}{OPTIONAL. Language (defaults to English) indicating what language rules to use in conversion to ordinal number.
   } 
@@ -31,6 +31,7 @@ toOrdinal(
 \examples{
 toOrdinal(1)  ## Returns a single character vector with ordinal number, default is in English
 toOrdinal(1, language="French")
+}
 
 \keyword{ misc }
 \keyword{ models }
