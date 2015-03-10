@@ -1,10 +1,10 @@
 \name{toOrdinal-package}
 \alias{toOrdinal-package}
 \docType{package}
-\title{Function for converting cardinal to ordinal numbers for use with multiple languages
+\title{Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator to the number
 }
 \description{
-Function for converting cardinal to ordinal numbers for use with multiple languages
+Function for Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator to the number. Function utilizes indicators as described in http://en.wikipedia.org/wiki/Ordinal_indicator.
 }
 
 \details{
@@ -12,7 +12,7 @@ Function for converting cardinal to ordinal numbers for use with multiple langua
 Package: \tab toOrdinal\cr
 Type: \tab Package\cr
 Version: \tab 0.0-1\cr
-Date: \tab 2015-3-4\cr
+Date: \tab 2015-3-10\cr
 License: \tab GPL-3\cr
 LazyLoad: \tab yes\cr
 }
