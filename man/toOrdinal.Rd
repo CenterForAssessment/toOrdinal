@@ -1,10 +1,7 @@
 \name{toOrdinal}
 \alias{toOrdinal}
-\title{Random Names Function}
-\description{
-Function to generate random gender and ethnicity correct first and/or last names. Names are chosen proportionally based upon their probability of appearing in a large scale data base of real names.
-Function to generate random gender and ethnicity correct first and/or/last names. The function probabilistically samples from the embedded toOrdinalData dataset to provide a realistic list of 
-first and/or last names. 
+\title{Cardinal to ordinal number conversion function}
+\description{Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator (http://en.wikipedia.org/wiki/Ordinal_indicator) to the number.
 }
 \usage{
 toOrdinal(                                                  
@@ -20,17 +17,20 @@ toOrdinal(
 } 
 
 
-\details{Typical use of the function is to submit an integer for conversion to an ordinal number in the language specified.
+\details{Typical use of the function is to submit a positive integer for conversion to an ordinal number in the language specified. See examples.
 }
 
-\value{Function returns a character vector containing the ordinal number. 
+\value{Function returns the ordinal number (as a character string). 
 }
 
 \author{Damian W. Betebenner \email{dbetebenner@nciea.org} }
 
 \examples{
-toOrdinal(1)  ## Returns a single character vector with ordinal number, default is in English
-toOrdinal(1, language="French")
+toOrdinal(1)  ## 1st
+toOrdinal(1, language="French") ## 1re
+
+sapply(1:20, toOrdinal) ## 1st, 2nd, 3rd, ...
+sapply(1:20, toOrdinal, language="French") ## 1re, 2e, 3e, ...
 }
 
 \keyword{ misc }
