@@ -1,7 +1,7 @@
 Package: toOrdinal
 Version: 0.0-1
 Date: 2015-3-11
-Title: Function for converting cardinal to ordinal numbers that adds a language specific ordinal indicator to the number
+Title: Function for Converting Cardinal to Ordinal Numbers by Adding a Language Specific Ordinal Indicator to the Number
 Depends: R (>= 2.10.0) 
 Author: Damian W. Betebenner <dbetebenner@nciea.org>
 Maintainer: Damian W. Betebenner <dbetebenner@nciea.org>
