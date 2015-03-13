@@ -17,8 +17,8 @@ function(
 	supported_languages_ordinal_number <- c("ENGLISH", "FRENCH", "GERMAN", "SPANISH")
 	supported_languages_ordinal_word <- "" 
 
-	if (floor(cardinal_number)!=cardinal_number && cardinal_number >= 1) stop(paste("Number supplied (", cardinal_number, ") to 'toOrdinal' must be a positive integer.", sep=""))
-	if (!toupper(language) %in% supported_languages_ordinal_word) stop(paste("Language supplied (", language, ") is currently not supported by toOrdinal. Currently supported languages include: ", paste(supported_languages_ordinal_number, collapse=", "), ". Please submit pull requests to https://github.com/CenterForAssessment/toOrdinal/pulls for additional language support.", sep=""))
+	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 1) stop("Number supplied to 'toOrdinal' must be a positive integer.", call.=FALSE)
+	if (!toupper(language) %in% supported_languages_ordinal_number) stop(paste("Language supplied (", language, ") is currently not supported by toOrdinal. Currently supported languages include: ", paste(supported_languages_ordinal_number, collapse=", "), ". Please submit pull requests to https://github.com/CenterForAssessment/toOrdinal/pulls for additional language support.", sep=""), call.=FALSE)
 
 
 	### ENGLISH

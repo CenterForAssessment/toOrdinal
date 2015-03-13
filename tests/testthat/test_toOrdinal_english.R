@@ -13,10 +13,10 @@ test_that("toOrdinal correctly processes integers 1-40 in English", {
   )
 })
 
-test_that("toOrdinal correctly errors when given a negative integer",{
+test_that("toOrdinal correctly errors when given a negative integer.",{
   
   expect_error(
-    toOrdinal(-1), "'cardinal_number' must be greater than zero"   
+    toOrdinal(-1), "Error : Number supplied to 'toOrdinal' must be a positive integer.\\n"   
   )
 })
 
