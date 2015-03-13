@@ -2,3 +2,5 @@
 .gitignore
 README.md
 .travis.yml
+^.*\.Rproj$
+^\.Rproj\.user$
