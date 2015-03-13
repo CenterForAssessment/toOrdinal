@@ -1,13 +1,11 @@
 toOrdinal
 ===========
 
-[![Join the chat at https://gitter.im/CenterForAssessment/toOrdinal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CenterForAssessment/toOrdinal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Cardinal to ordinal number function
 ---------------------------------------
 
 The function **toOrdinal** is used to convert a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th). Because such conversions are language specific, feel free to clone and make
-a pull request with the additional specifications for other languages.[![Build Status](https://travis-ci.org/CenterForAssessment/toOrdinal.svg?branch=master)](https://travis-ci.org/CenterForAssessment/toOrdinal)
+a pull request with the additional specifications for other languages.[![Build Status](https://travis-ci.org/CenterForAssessment/toOrdinal.svg?branch=master)](https://travis-ci.org/CenterForAssessment/toOrdinal) [![Join the chat at https://gitter.im/CenterForAssessment/toOrdinal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CenterForAssessment/toOrdinal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 Currently the package implements English, French and German. For example,
