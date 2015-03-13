@@ -3,10 +3,6 @@ function(
 	cardinal_number,
 	language="English") {
 
-  ## ordinal numbers must be positive
-  if (cardinal_number <= 0) {
-     stop("'cardinal_number' must be greater than zero.")
-  }
   
 	### Utility function
 
