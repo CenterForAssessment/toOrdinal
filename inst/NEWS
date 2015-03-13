@@ -1,3 +1,8 @@
+Changes in version: toOrdinal_0.0-2
+
+  o Added messages indicating language support.
+  o Added functionality to convert to ordinal word.
+
 Changes in version: toOrdinal_0.0-1
 
   o Package Released.
