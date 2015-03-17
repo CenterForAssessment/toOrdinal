@@ -1,7 +1,8 @@
 `toOrdinal` <- 
 function(
 	cardinal_number,
-	language="English") {
+	language="English",
+	convert.to="ordinal_number") {
 
   
 	### Utility function
