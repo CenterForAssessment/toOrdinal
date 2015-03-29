@@ -1,3 +1,7 @@
+Changes in version: toOrdinal_0.0-3
+
+  o Added support for Swedish (Jeff Erickson).
+
 Changes in version: toOrdinal_0.0-2
 
   o Added messages indicating language support.
