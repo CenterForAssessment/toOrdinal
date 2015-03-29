@@ -10,11 +10,13 @@ a pull request with the additional specifications for other languages.
 [![Build Status](https://travis-ci.org/CenterForAssessment/toOrdinal.svg?branch=master)](https://travis-ci.org/CenterForAssessment/toOrdinal) [![Join the chat at https://gitter.im/CenterForAssessment/toOrdinal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CenterForAssessment/toOrdinal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg?style=flat)](https://github.com/CenterForAssessment/toOrdinal/blob/master/LICENSE.md)
 
 
-Currently the package implements English, French and German. For example,
+Currently the package implements English, French, German, Spanish, and Swedish. For example,
 
 * English: toOrdinal(1) returns '1st'
 * German: toOrdinal(1, language="German") returns '1te'
 * French: toOrdinal(1, language="French") returns '1re'
+* Spanish: toOrdinal(1, language="Spanish") returns '1.er'
+* Swedish: toOrdinal(1, language="Swedish") returns '1:a'
 
 To install the latest stable release from [CRAN](http://cran.r-project.org/package=toOrdinal)
 ---------------------------
