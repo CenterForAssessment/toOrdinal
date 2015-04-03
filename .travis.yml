@@ -1,2 +1,11 @@
 language: r
 warnings_are_errors: true
+sudo: required
+
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/d0e10645feb915356cab
+    on_success: always
+    on_failure: always
+    on_start: false
