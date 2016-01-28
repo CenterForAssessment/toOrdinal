@@ -1,10 +1,10 @@
-`toOrdinal` <- 
+`toOrdinal` <-
 function(
 	cardinal_number,
 	language="English",
 	convert_to="ordinal_number") {
 
-  
+
 	### Utility function
 
 	strtail <- function(s, n=1) {
@@ -16,8 +16,8 @@ function(
 	### Argument tests
 
 	supported_languages_ordinal_number <- c("ENGLISH", "FRENCH", "GERMAN", "SPANISH", "SWEDISH")
-	supported_languages_ordinal_word <- "" 
-	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 1) stop("Number supplied to 'toOrdinal' must be a positive integer.", call.=FALSE)
+	supported_languages_ordinal_word <- ""
+	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 0) stop("Number supplied to 'toOrdinal' must be a positive integer.", call.=FALSE)
 
 
 	#######################################################
@@ -72,13 +72,13 @@ function(
 			if (tmp %in% c('0', '2', '4', '5', '6', '7', '8', '9')) tmp.suffix <- ".\u00BA"
 		}
 
-   
+
 		### SWEDISH
-		
+
 		if (toupper(language)=="SWEDISH") {
 		 	tmp_1char <- strtail(as.character(cardinal_number), 1)
 		 	tmp_2char <- strtail(as.character(cardinal_number), 2)
-		 	if (tmp_1char %in% c('0', '3', '4', '5', '6', '7', '8', '9') | tmp_2char %in% c('11', '12')) { 
+		 	if (tmp_1char %in% c('0', '3', '4', '5', '6', '7', '8', '9') | tmp_2char %in% c('11', '12')) {
 				tmp.suffix <- ":e"
 			} else if (tmp_1char %in% c('1', '2')) {
 				tmp.suffix <- ":a"
@@ -90,7 +90,7 @@ function(
 
 		if (toupper(language)=="TURKISH") {
 		}
-	
+
 		return(paste(cardinal_number, tmp.suffix, sep=""))
 
 	} ### if (identical(toupper(convert_to), "ORDINAL_NUMBER"))

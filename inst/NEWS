@@ -1,3 +1,11 @@
+Changes in version: toOrdinal_0.0-5
+
+  o Minor fix so English works with 0.
+
+Changes in version: toOrdinal_0.0-4
+
+  o Some tweak to make CRAN worthy post R 3.2.1.
+
 Changes in version: toOrdinal_0.0-3
 
   o Added support for Swedish (Jeff Erickson).

@@ -11,8 +11,8 @@ Function for converting cardinal to ordinal numbers by adding a language specifi
 \tabular{ll}{
 Package: \tab toOrdinal\cr
 Type: \tab Package\cr
-Version: \tab 0.0-3\cr
-Date: \tab 2015-3-29\cr
+Version: \tab 0.0-5\cr
+Date: \tab 2016-1-28\cr
 License: \tab GPL-3\cr
 LazyLoad: \tab yes\cr
 }
