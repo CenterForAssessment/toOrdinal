@@ -2,8 +2,8 @@ Package: toOrdinal
 Type: Package
 Title: Function for Converting Cardinal to Ordinal Numbers by Adding a Language Specific Ordinal Indicator to the Number
 Description: Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator (http://en.wikipedia.org/wiki/Ordinal_indicator) to the number. 
-Version: 0.0-3
-Date: 2015-3-29
+Version: 0.0-6
+Date: 2016-3-7
 Authors@R: c(person(given=c("Damian", "W."), family="Betebenner", email="dbetebenner@nciea.org", role=c("aut", "cre")),
                 person(given="Andrew", family="Martin", role="ctb"),
 		person(given="Jeff", family="Erickson", role="ctb"))
