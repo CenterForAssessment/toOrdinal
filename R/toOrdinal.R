@@ -17,7 +17,7 @@ function(
 
 	supported_languages_ordinal_number <- c("ENGLISH", "FRENCH", "GERMAN", "SPANISH", "SWEDISH")
 	supported_languages_ordinal_word <- ""
-	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 0) stop("Number supplied to 'toOrdinal' must be a positive integer.", call.=FALSE)
+	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 0) stop("Number supplied to 'toOrdinal' must be a non-negative integer.", call.=FALSE)
 
 
 	#######################################################
