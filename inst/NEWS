@@ -1,3 +1,7 @@
+Changes in version: toOrdinal_0.0-6
+
+  o Fixing testthat error message for Swedish.
+
 Changes in version: toOrdinal_0.0-5
 
   o Minor fix so English works with 0.
