@@ -15,7 +15,7 @@ function(
 
 	### Argument tests
 
-	supported_languages_ordinal_number <- c("ENGLISH", "FRENCH", "GERMAN", "SPANISH", "SWEDISH")
+	supported_languages_ordinal_number <- c("ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH")
 	supported_languages_ordinal_word <- ""
 	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 0) stop("Number supplied to 'toOrdinal' must be a non-negative integer.", call.=FALSE)
 
@@ -56,12 +56,19 @@ function(
 		}
 
 
-		### GERMAN
+		### GERMAN (standard method of adding a suffix "." to the number)
+
+		if (toupper(language)=="GERMAN_ALT") {
+			if (cardinal_number >=0) tmp.suffix <- "."
+		}
+
+
+		### GERMAN (informal *te and *ste endings)
 
 		if (toupper(language)=="GERMAN") {
-			if (cardinal_number >=1 & cardinal_number <= 19) tmp.suffix <- "te"
+			if (cardinal_number >=0 & cardinal_number <= 19) tmp.suffix <- "te"
 			if (cardinal_number >= 20) tmp.suffix <- "ste"
-			}
+		}
 
 
 		### SPANISH

@@ -1,3 +1,8 @@
+Changes in version: toOrdinal_0.0-7
+
+  o Adding GERMAN_ALT that adds a 'full-stop' to the end of each non-negative integer.
+  o Added '0te' to GERMAN to correctly deal with GERMAN zero.
+
 Changes in version: toOrdinal_0.0-6
 
   o Fixing testthat error message for Swedish.
