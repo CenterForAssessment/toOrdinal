@@ -1,4 +1,4 @@
-citHeader("To cite package 'toOrdinal' in publications use:")
+citHeader("To cite package 'toOrdinal' in publications, please use:")
 
 citEntry(entry = "Manual",
          title        = "{toOrdinal}: Function for Converting Cardinal to Ordinal Numbers by Adding a Language Specific Ordinal Indicator to the Number",
