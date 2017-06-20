@@ -1,0 +1,22 @@
+---
+title: "toOrdinal 1.0-0.0"
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(comment = "#>", collapse = TRUE)
+```
+
+
+This is 1.0 release of the **toOrdinal** package. This release is about the creation of vignettes and
+[web-documentation](https://CenterForAssessment.github.io/toOrdinal) for the package. However, the package now
+supports:
+
+* English: toOrdinal(1) returns '1st'
+* German: toOrdinal(1, language="German") returns '1te'
+* French: toOrdinal(1, language="French") returns '1re'
+* Spanish: toOrdinal(1, language="Spanish") returns '1.er'
+* Swedish: toOrdinal(1, language="Swedish") returns '1:a'
+
+See the new [Getting Started Vignette](https://centerforassessment.github.io/toOrdinal/articles/toOrdinal.html) for more information.
+
+Feel free to drop me a line with any comments, feature requests, or ideas. And give us a shout-out Tweet using the Twitter button in the upper right!
