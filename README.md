@@ -1,18 +1,24 @@
 toOrdinal
 ===========
 
+[![Build Status](https://travis-ci.org/CenterForAssessment/toOrdinal.svg?branch=master)](https://travis-ci.org/CenterForAssessment/toOrdinal)
+![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/centerforassessment/toOrdinal?branch=master&svg=true)](https://ci.appveyor.com/project/centerforassessment/toOrdinal)
+[![Join the chat at https://gitter.im/CenterForAssessment/toOrdinal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CenterForAssessment/toOrdinal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/toOrdinal)](http://cran.r-project.org/package=toOrdinal)
+[![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg?style=flat)](https://github.com/CenterForAssessment/toOrdinal/blob/master/LICENSE.md)
+
 Cardinal to ordinal number function
 ---------------------------------------
 
-The function **toOrdinal** is used to convert a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th). Because such conversions are language specific, feel free to clone and make
-a pull request with the additional specifications for other languages. 
+The function **toOrdinal** converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th). Because such conversions are language specific, feel free to clone and make
+a pull request with the specifications for other languages.
 
-[![Build Status](https://travis-ci.org/CenterForAssessment/toOrdinal.svg?branch=master)](https://travis-ci.org/CenterForAssessment/toOrdinal) [![Join the chat at https://gitter.im/CenterForAssessment/toOrdinal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CenterForAssessment/toOrdinal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
+[![Build Status](https://travis-ci.org/CenterForAssessment/toOrdinal.svg?branch=master)](https://travis-ci.org/CenterForAssessment/toOrdinal) [![Join the chat at https://gitter.im/CenterForAssessment/toOrdinal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CenterForAssessment/toOrdinal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/toOrdinal)](http://cran.r-project.org/package=toOrdinal)
 [![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg?style=flat)](https://github.com/CenterForAssessment/toOrdinal/blob/master/LICENSE.md)
 
 
-Currently the package implements English, French, German, Spanish, and Swedish. For example,
+At present, the package implements English, French, German, Spanish, and Swedish. For example,
 
 * English: toOrdinal(1) returns '1st'
 * German: toOrdinal(1, language="German") returns '1te'
