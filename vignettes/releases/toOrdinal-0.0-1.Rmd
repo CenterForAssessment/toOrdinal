@@ -1,0 +1,18 @@
+---
+title: "toOrdinal 0.0-1"
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(comment = "#>", collapse = TRUE)
+```
+
+
+This is the initial release of the **toOrdinal** package. The **toOrdinal** package was developed to convert cardinal to ordinal numbers.
+Because ordinal numbers are language specific, the package will have different options for different languages that will be added as time permits and with the help from contributors.
+
+```r
+library(toOrdinal)
+print(toOrdinal(5))
+```
+
+For complete `toOrdinal` documentation, see the [documentation](https://CenterForAssessment.github.io/toOrdinal/reference/toOrdinal.html)

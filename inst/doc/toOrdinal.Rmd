@@ -1,0 +1,68 @@
+---
+author: "Damian W Betebenner"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with toOrdinal}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r include = FALSE}
+library(toOrdinal)
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = ">",
+    fig.dpi = 96
+			)
+```
+
+# Introduction
+
+The package **toOrdinal** contains a single function `toOrdinal` that converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th).
+Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements English,
+French, German, Spanish, and Swedish. For example,
+
+* English: toOrdinal(1) returns '1st'
+* German: toOrdinal(1, language="German") returns '1te'
+* French: toOrdinal(1, language="French") returns '1re'
+* Spanish: toOrdinal(1, language="Spanish") returns '1.er'
+* Swedish: toOrdinal(1, language="Swedish") returns '1:a'
+
+
+# Use
+
+After [installing](https://dbetebenner.github.io/toOrdinal/index.html#installation) the package from either CRAN
+or GitHub, it's simple to convert a cardinal to an ordinal number.
+
+To convert cardinal to ordinal numbers in English (the default), supply the cardinal number to `toOrdinal`.
+
+```{r}
+toOrdinal(5)
+```
+
+Conversion in other languages are performed by supplying the appropriate language to the `language` argument:
+
+```{r}
+toOrdinal(5, language="German")
+toOrdinal(5, language="French")
+toOrdinal(5, language="Spanish")
+toOrdinal(5, language="Swedish")
+```
+
+Current languages supported include: English, German, French, Spanish, and Swedish.
+
+
+## Examples
+
+The first argument, `n`, is the cardinal number to be converted to an ordinal number:
+
+```{r}
+sapply(1:10, toOrdinal)
+```
+
+
+# Contributions & Requests
+
+If you have contribution (for example, another language) or a feature request for the **toOrdinal** package, don't hesitate to write or set up an [issue on GitHub](https://github.com/CenterForAssessment/toOrdinal/issues). Current new features include the possiblity of converting cardinal numbers to ordinal words
+(e.g., 8 to eighth).
