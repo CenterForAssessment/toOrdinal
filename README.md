@@ -10,8 +10,9 @@ toOrdinal
 
 # Overview
 
-The function **toOrdinal** converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th). Because such conversions are language specific,
-the conversions are specific to a supported language. At present, the package implements English, French, German, Spanish, and Swedish. For example,
+The package **toOrdinal** contains a single function `toOrdinal` that converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th).
+Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements English, 
+French, German, Spanish, and Swedish. For example,
 
 * English: toOrdinal(1) returns '1st'
 * German: toOrdinal(1, language="German") returns '1te'
@@ -67,7 +68,7 @@ devtools::install_github("CenterForAssessment/toOrdinal")
 
 # Contributors
 
-The **randomNames** Package is crafted with :heart: by:
+The **toOrdinal** Package is crafted with :heart: by:
 
 * [Damian Betebenner](https://github.com/dbetebenner)
 
