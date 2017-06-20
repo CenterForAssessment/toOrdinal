@@ -1,14 +1,14 @@
-citHeader("To cite package 'toOrdinal' in publications use:")
+citHeader("To cite package 'toOrdinal' in publications, please use:")
 
 citEntry(entry = "Manual",
          title        = "{toOrdinal}: Function for Converting Cardinal to Ordinal Numbers by Adding a Language Specific Ordinal Indicator to the Number",
          author       = "Damian W. Betebenner",
-         year         = "2016",
-         note         = "R package version 0.0-7",
+         year         = "2017",
+         note         = "R package version 0.0-8",
          url          = "https://github.com/CenterForAssessment/toOrdinal",
          
-         textVersion  = paste("Damian W. Betebenner (2016).",
+         textVersion  = paste("Damian W. Betebenner (2017).",
                         "toOrdinal: Function for Converting Cardinal to Ordinal Numbers by Adding a Language Specific Ordinal Indicator to the Number",
-                        "(R package version 0.0-7.",
+                        "(R package version 0.0-8.",
                         "URL https://github.com/CenterForAssessment/toOrdinal")
 )

@@ -1,0 +1,42 @@
+template:
+  package: centerPackageTemplate
+  default_assets: false
+
+
+home:
+  strip_header: true
+  links:
+    - text: Other Center stuff
+      href: https://centerforassessment.github.io/
+
+
+navbar:
+    title: ~
+    type: default
+    left:
+    - text: Getting Started
+      href: articles/toOrdinal.html
+    - text: Reference
+      href: reference/index.html
+    - text: News
+      menu:
+      - text: "Release notes"
+      - text: "Version 1.0-0.0"
+        href: articles/releases/toOrdinal-1.0-0.0.html
+      - text: "Version 0.0-1"
+        href: articles/releases/toOrdinal-0.0-1.html
+      - text: "------------------"
+      - text: "Change log"
+        href: news/index.html
+    right:
+      - icon: fa-github
+        href: https://github.com/centerforassessment/toOrdinal
+      - icon: fa-twitter
+        href: https://twitter.com/intent/tweet?url=https%3A%2F%2Fcenterforassessment.github.io%2FtoOrdinal&via=dbetebenner&text=toOrdinal%3A%20Cardinal%20to%20ordinal%20number%20conversion%20function&hashtags=toOrdinal%2C%20rstats
+
+
+reference:
+      - title: Convert cardinal to ordinal numbers
+        desc:  Function to converting cardinal to ordinal numbers.
+        contents:
+            - toOrdinal
