@@ -1,7 +1,7 @@
 \name{toOrdinal-package}
 \alias{toOrdinal-package}
 \docType{package}
-\title{Convert Cardinal to Ordinal Numbers Adding a Language Specific Ordinal Indicator to the Number
+\title{Cardinal to Ordinal Number Conversion
 }
 \description{
 Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator (http://en.wikipedia.org/wiki/Ordinal_indicator) to the number.
