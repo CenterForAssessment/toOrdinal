@@ -32,7 +32,7 @@ navbar:
       - icon: fa-github
         href: https://github.com/centerforassessment/toOrdinal
       - icon: fa-twitter
-        href: https://twitter.com/intent/tweet?url=https%3A%2F%2Fcenterforassessment.github.io%2FtoOrdinal&via=dbetebenner&text=toOrdinal%3A%20Cardinal%20to%20ordinal%20number%20conversion%20function&hashtags=toOrdinal%2C%20rstats
+        href: https://twitter.com/intent/tweet?url=https%3A%2F%2Fcenterforassessment.github.io%2FtoOrdinal&via=dbetebenner&text=toOrdinal%3A%20R%20package%20to%20convert%20cardinal%20to%20ordinal%20numbers&hashtags=toOrdinal%2C%20rstats
 
 
 reference:
