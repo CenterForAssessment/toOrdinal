@@ -11,11 +11,18 @@ vignette: >
 
 ```{r include = FALSE}
 library(toOrdinal)
+is_html_output = function() {
+  knitr::opts_knit$get("rmarkdown.pandoc.to")=="html"
+}
 knitr::opts_chunk$set(
     collapse = TRUE,
-    comment = ">",
+    comment = "",
+    prompt=TRUE,
     fig.dpi = 96
 			)
+if (is_html_output()) {
+    options(width=1000)
+}
 ```
 
 # Introduction

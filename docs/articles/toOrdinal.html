@@ -106,24 +106,24 @@
 <a href="#use" class="anchor"></a>Use</h1>
 <p>After <a href="https://dbetebenner.github.io/toOrdinal/index.html#installation">installing</a> the package from either CRAN or GitHub, it’s simple to convert a cardinal to an ordinal number.</p>
 <p>To convert cardinal to ordinal numbers in English (the default), supply the cardinal number to <code>toOrdinal</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>)
-<span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="st">"5th"</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>)
+[<span class="dv">1</span>] <span class="st">"5th"</span></code></pre></div>
 <p>Conversion in other languages are performed by supplying the appropriate language to the <code>language</code> argument:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"German"</span>)
-<span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="st">"5te"</span>
-<span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"French"</span>)
-<span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="st">"5e"</span>
-<span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"Spanish"</span>)
-<span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="st">"5.º"</span>
-<span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"Swedish"</span>)
-<span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="st">"5:e"</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"German"</span>)
+[<span class="dv">1</span>] <span class="st">"5te"</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"French"</span>)
+[<span class="dv">1</span>] <span class="st">"5e"</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"Spanish"</span>)
+[<span class="dv">1</span>] <span class="st">"5.º"</span>
+<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"Swedish"</span>)
+[<span class="dv">1</span>] <span class="st">"5:e"</span></code></pre></div>
 <p>Current languages supported include: English, German, French, Spanish, and Swedish.</p>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
 <p>The first argument, <code>n</code>, is the cardinal number to be converted to an ordinal number:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, toOrdinal)
-<span class="op">&gt;</span><span class="st">  </span>[<span class="dv">1</span>] <span class="st">"1st"</span>  <span class="st">"2nd"</span>  <span class="st">"3rd"</span>  <span class="st">"4th"</span>  <span class="st">"5th"</span>  <span class="st">"6th"</span>  <span class="st">"7th"</span>  <span class="st">"8th"</span>  <span class="st">"9th"</span>  <span class="st">"10th"</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, toOrdinal)
+ [<span class="dv">1</span>] <span class="st">"1st"</span>  <span class="st">"2nd"</span>  <span class="st">"3rd"</span>  <span class="st">"4th"</span>  <span class="st">"5th"</span>  <span class="st">"6th"</span>  <span class="st">"7th"</span>  <span class="st">"8th"</span>  <span class="st">"9th"</span>  <span class="st">"10th"</span></code></pre></div>
 </div>
 </div>
 <div id="contributions-requests" class="section level1">
