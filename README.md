@@ -29,7 +29,7 @@ French, German, Spanish, and Swedish. For example,
 To install the latest stable release of **toOrdinal** from [CRAN](https://CRAN.R-project.org/package=toOrdinal)
 
 ```R
-install.packages("toOrdinal")
+> install.packages("toOrdinal")
 ```
 
 ## From [Github](https://github.com/CenterForAssessment/toOrdinal/)
@@ -37,7 +37,7 @@ install.packages("toOrdinal")
 To install the development release of **toOrdinal** from [GitHub](https://github.com/CenterForAssessment/toOrdinal/):
 
 ```R
-devtools::install_github("CenterForAssessment/toOrdinal")
+> devtools::install_github("CenterForAssessment/toOrdinal")
 ```
 
 
