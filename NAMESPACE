@@ -1,2 +1,6 @@
+import(knitr)
+import(rmarkdown)
+import(testthat)
 export(toOrdinal)
+importFrom(crayon,bold,green,magenta,red,yellow)
 importFrom(utils,packageVersion)

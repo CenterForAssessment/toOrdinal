@@ -1,11 +1,10 @@
-`.onLoad` <- 
+`.onLoad` <-
 function(libname, pkgname) {
 }
 
-
-`.onAttach` <- 
+`.onAttach` <-
 function(libname, pkgname) {
 	if (interactive()) {
-		packageStartupMessage('toOrdinal ',paste(paste(unlist(strsplit(as.character(packageVersion("toOrdinal")), "[.]")), c(".", "-", ".", ""), sep=""), collapse=""),'  For help type: help("toOrdinal")')
+		packageStartupMessage(magenta$bold('toOrdinal',paste(paste0(unlist(strsplit(as.character(packageVersion("toOrdinal")), "[.]")), c(".", "-", ".", "")), collapse=""),' (6-29-2017). For help: >help("toOrdinal") or visit https://centerforassessment.github.io/toOrdinal'))
 	}
 }

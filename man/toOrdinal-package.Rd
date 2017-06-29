@@ -12,7 +12,7 @@ Function for converting cardinal to ordinal numbers by adding a language specifi
 Package: \tab toOrdinal\cr
 Type: \tab Package\cr
 Version: \tab 1.0-0.0\cr
-Date: \tab 2017-6-25\cr
+Date: \tab 2017-6-29\cr
 License: \tab GPL-3\cr
 LazyLoad: \tab yes\cr
 }
