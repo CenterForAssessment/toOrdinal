@@ -8,7 +8,8 @@ Authors@R: c(person(given=c("Damian", "W."), family="Betebenner", email="dbetebe
 		person(given="Jeff", family="Erickson", role="ctb"))
 Maintainer: Damian W. Betebenner <dbetebenner@nciea.org>
 Depends: R (>= 3.3)
-Imports: crayon, knitr, rmarkdown, testthat
+Suggests: knitr, rmarkdown
+Imports: crayon, testthat
 URL: https://CenterForAssessment.github.io/toOrdinal, https://github.com/CenterForAssessment/toOrdinal, https://cran.r-project.org/package=toOrdinal
 BugReports: https://github.com/CenterForAssessment/toOrdinal/issues
 VignetteBuilder: knitr
