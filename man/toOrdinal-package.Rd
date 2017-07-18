@@ -4,7 +4,7 @@
 \title{Cardinal to Ordinal Number Conversion
 }
 \description{
-Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator (http://en.wikipedia.org/wiki/Ordinal_indicator) to the number.
+Language specific cardinal to ordinal number conversion.
 }
 
 \details{
@@ -12,7 +12,7 @@ Function for converting cardinal to ordinal numbers by adding a language specifi
 Package: \tab toOrdinal\cr
 Type: \tab Package\cr
 Version: \tab 1.0-0.0\cr
-Date: \tab 2017-6-29\cr
+Date: \tab 2017-7-18\cr
 License: \tab GPL-3\cr
 LazyLoad: \tab yes\cr
 }
