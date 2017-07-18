@@ -1,8 +1,8 @@
 Package: toOrdinal
 Version: 1.0-0.0
-Date: 2017-6-29
+Date: 2017-7-18
 Title: Cardinal to Ordinal Number Conversion
-Description: Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator (http://en.wikipedia.org/wiki/Ordinal_indicator) to the number.
+Description: Language specific cardinal to ordinal number conversion.
 Authors@R: c(person(given=c("Damian", "W."), family="Betebenner", email="dbetebenner@nciea.org", role=c("aut", "cre")),
                 person(given="Andrew", family="Martin", role="ctb"),
 		person(given="Jeff", family="Erickson", role="ctb"))
