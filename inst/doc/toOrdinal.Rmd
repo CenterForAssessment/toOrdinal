@@ -1,7 +1,7 @@
 ---
 title: "Getting started with toOrdinal"
 author: "Damian W Betebenner"
-date: "`r Sys.Date()`"
+date: "`r paste0(format(Sys.Date(), format='%B '), toOrdinal::toOrdinal(as.numeric(format(Sys.Date(), format='%d'))), format(Sys.Date(), format=', %Y'))`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Getting started with toOrdinal}
@@ -40,7 +40,7 @@ French, German, Spanish, and Swedish. For example,
 
 # Use
 
-After [installing](https://dbetebenner.github.io/toOrdinal/index.html#installation) the package from either CRAN
+After [installing](../index.html#installation) the package from either CRAN
 or GitHub, it's simple to convert a cardinal to an ordinal number.
 
 To convert cardinal to ordinal numbers in English (the default), supply the cardinal number to `toOrdinal`.
