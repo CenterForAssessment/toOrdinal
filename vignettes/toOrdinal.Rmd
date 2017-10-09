@@ -67,7 +67,9 @@ toOrdinalDate()
 toOrdinalDate("2017-12-25")
 ```
 
-The only language currently supported by `toOrdinalDate` is English.
+If no argument is provided to `toOrdinalDate`, then the current date derived from `Sys.date()` is used to created to ordinal version of the calendar date.
+If a date is supplied, then a character string of the form "YYYY-MM-DD" must be supplied that is then converted to a formal date. Like with the function `toOrdinal`
+the potential exists for multiple language support with `toOrdinalDate`. However, the only language currently supported by `toOrdinalDate` is English.
 
 ## Examples
 
