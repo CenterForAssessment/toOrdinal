@@ -60,6 +60,14 @@ toOrdinal(5, language="Swedish")
 
 Current languages supported include: English, German, French, Spanish, and Swedish.
 
+Since Version 1.1, the function `toOrdinalDate` converts calendar dates to a long format, ordinal form.
+
+```{r}
+toOrdinalDate()
+toOrdinalDate("2017-12-25")
+```
+
+The only language currently supported by `toOrdinalDate` is English.
 
 ## Examples
 
@@ -68,6 +76,7 @@ The first argument, `n`, is the cardinal number to be converted to an ordinal nu
 ```{r}
 sapply(1:10, toOrdinal)
 ```
+
 
 
 # Contributions & Requests
