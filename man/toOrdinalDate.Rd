@@ -10,7 +10,7 @@ toOrdinalDate(
 }
 
 \arguments{
-  \item{date}{Either NULL (the default which uses the current date returned via \code{Sys.date90}) or a character string of the form \code{YYYY-MM-DD}.
+  \item{date}{Either NULL (the default which uses the current date returned via \code{Sys.date()} or a character string of the form \code{YYYY-MM-DD}.
   }
   \item{language}{OPTIONAL. Language (defaults to English) indicating what language rules to use in conversion to ordinal number.
   }

@@ -40,3 +40,7 @@ reference:
         desc:  Function to converting cardinal to ordinal numbers.
         contents:
             - toOrdinal
+      - title: Convert calendar date to long, ordinal version
+        desc:  Function to convert calendar date to long ordinal version.
+        contents:
+            - toOrdinalDate
