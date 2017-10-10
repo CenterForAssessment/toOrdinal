@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="https://centerforassessment.github.io/public/favicon.png" sizes="16x16">
 
-<title>toOrdinal • Cardinal to Ordinal Number Conversion — toOrdinal-package</title>
+<title>toOrdinal • Convert date to ordinal calendar date — toOrdinalDate</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -101,47 +101,56 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Cardinal to Ordinal Number Conversion</h1>
+    <h1>Convert date to ordinal calendar date</h1>
     </div>
 
     
-    <p>Language specific cardinal to ordinal number conversion.</p>
+    <p>Function for converting a calendar date to it long, ordinal version.</p>
     
 
-        
+    <pre class="usage"><span class='fu'>toOrdinalDate</span>(
+        <span class='kw'>date</span><span class='kw'>=</span><span class='kw'>NULL</span>,
+        <span class='kw'>language</span><span class='kw'>=</span><span class='st'>"English"</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>date</th>
+      <td><p>Either NULL (the default which uses the current date returned via <code>Sys.date()</code> or a character string of the form <code>YYYY-MM-DD</code>.</p></td>
+    </tr>
+    <tr>
+      <th>language</th>
+      <td><p>OPTIONAL. Language (defaults to English) indicating what language rules to use in conversion to ordinal number.</p></td>
+    </tr>
+    </table>
+    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <table><tr><td>
-Package: </td>
-</tr><tr><td> toOrdinal</td>
-</tr><tr><td>
-Type: </td>
-</tr><tr><td> Package</td>
-</tr><tr><td>
-Version: </td>
-</tr><tr><td> 1.1-0.0</td>
-</tr><tr><td>
-Date: </td>
-</tr><tr><td> 2017-10-9</td>
-</tr><tr><td>
-License: </td>
-</tr><tr><td> GPL-3</td>
-</tr><tr><td>
-LazyLoad: </td>
-</tr><tr><td> yes</td>
-</tr></table>
+    <p>Typical use of the function is to call the function with any argument to get the current date in long, ordinal form. See examples.</p>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Function returns the character string with the long, ordinal calendar date.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>toOrdinalDate</span>()</div><div class='output co'>#&gt; [1] "October 9th, 2017"</div><div class='input'><span class='fu'>toOrdinalDate</span>(<span class='st'>"2017-10-9"</span>) <span class='co'>## October 9th, 2017</span></div><div class='output co'>#&gt; [1] "October 9th, 2017"</div><div class='input'><span class='fu'>toOrdinalDate</span>(<span class='st'>"2017-10-09"</span>) <span class='co'>## October 9th, 2017</span></div><div class='output co'>#&gt; [1] "October 9th, 2017"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#details">Details</a></li>
-          </ul>
+
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
     <h2>Author</h2>
-    Damian W. Betebenner <a href='mailto:DBetebenner@nciea.org'>DBetebenner@nciea.org</a>
+    Damian W. Betebenner <a href='mailto:dbetebenner@nciea.org'>dbetebenner@nciea.org</a> 
   </div>
 </div>
 
