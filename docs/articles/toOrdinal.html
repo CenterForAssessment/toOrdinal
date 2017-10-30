@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="https://centerforassessment.github.io/public/favicon.png" sizes="16x16">
+<link rel="icon" type="image/png" href="https://centerforassessment.github.io/assets/favicon.png" sizes="16x16">
 <title>toOrdinal • Getting started with toOrdinal</title>
-<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="../packagePages.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- Fonts --><link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400" rel="stylesheet" type="text/css">
-<!-- packagePages --><link href="../pkgdown.css" rel="stylesheet">
+<!-- packagePages --><link href="../packagePages.css" rel="stylesheet">
+<link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- gist-embed --><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
 </head>
 <body>
@@ -83,7 +83,7 @@
       <h1>Getting started with toOrdinal</h1>
                         <h4 class="author">Damian W Betebenner</h4>
             
-            <h4 class="date">October 9th, 2017</h4>
+            <h4 class="date">October 30th, 2017</h4>
           </div>
 
     
@@ -120,7 +120,7 @@
 <p>Current languages supported include: English, German, French, Spanish, and Swedish.</p>
 <p>Since Version 1.1, the function <code>toOrdinalDate</code> converts calendar dates to a long format, ordinal form.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinalDate.html">toOrdinalDate</a></span>()
-[<span class="dv">1</span>] <span class="st">"October 9th, 2017"</span>
+[<span class="dv">1</span>] <span class="st">"October 30th, 2017"</span>
 <span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinalDate.html">toOrdinalDate</a></span>(<span class="st">"2017-12-25"</span>)
 [<span class="dv">1</span>] <span class="st">"December 25th, 2017"</span></code></pre></div>
 <p>If no argument is provided to <code>toOrdinalDate</code>, then the current date derived from <code>Sys.date()</code> is used to created to ordinal version of the calendar date. If a date is supplied, then a character string of the form “YYYY-MM-DD” must be supplied that is then converted to a formal date. Like with the function <code>toOrdinal</code> the potential exists for multiple language support with <code>toOrdinalDate</code>. However, the only language currently supported by <code>toOrdinalDate</code> is English.</p>
