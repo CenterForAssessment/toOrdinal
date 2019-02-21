@@ -2,6 +2,7 @@
 
 * Updated GitHub-pages website and documentation
 * Fixed minor bugs in code
+* Adding toOrdinalDate that converts a ####-##-## date to a pretty format like December 25th, 2018
 
 # toOrdinal 1.0-0.0
 
