@@ -11,12 +11,18 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "", prompt=TRUE, fig.dpi = 96)
 if (is_html_output()) {
     options(width=1000)
 }
+require(toOrdinal, quietly=TRUE)
 ```
 
 
-This is 1.1 release of the **toOrdinal** package. This release is about the creation of vignettes and
-[web-documentation](https://CenterForAssessment.github.io/toOrdinal) for the package. However, the package now
-supports:
+This is 1.1 release of the **toOrdinal** package.  This release includes a new function `toOrdinalDate` that converts calendar dates:
+
+```{r}
+toOrdinalDate()
+toOrdinalDate("2017-12-25")
+```
+
+This release also updates the [web-documentation](https://CenterForAssessment.github.io/toOrdinal) for the package. 
 
 * English: toOrdinal(1) returns '1st'
 * German: toOrdinal(1, language="German") returns '1te'
