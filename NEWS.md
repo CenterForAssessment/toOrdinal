@@ -1,3 +1,8 @@
+# toOrdinal 1.1-0.0
+
+* Updated GitHub-pages website and documentation
+* Fixed minor bugs in code
+
 # toOrdinal 1.0-0.0
 
 * Building GitHub-pages website and documentation
