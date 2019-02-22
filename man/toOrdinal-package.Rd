@@ -12,7 +12,7 @@ Language specific cardinal to ordinal number conversion.
 Package: \tab toOrdinal\cr
 Type: \tab Package\cr
 Version: \tab 1.1-0.0\cr
-Date: \tab 2019-2-21\cr
+Date: \tab 2019-2-22\cr
 License: \tab GPL-3\cr
 LazyLoad: \tab yes\cr
 }
