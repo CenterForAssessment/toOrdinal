@@ -6,7 +6,7 @@
 \usage{
 toOrdinal(
 	cardinal_number,
-	language="English",
+	language=c("ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH"),
 	convert_to="ordinal_number")
 }
 
