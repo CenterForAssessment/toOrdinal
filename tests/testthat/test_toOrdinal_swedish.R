@@ -15,7 +15,7 @@ test_that("toOrdinal correctly processes integers 0-40 in Swedish", {
 
 test_that("toOrdinal correctly processes integers 101, 102, 111, and 112 in Swedish", {
   adtl_nums <- c("101:a", "102:a", "111:e", "112:e")
-  using_toOrdinal <- sapply(c(101, 102, 111, 112), "toOrdinal", language="swedish")
+  using_toOrdinal <- toOrdinal(c(101, 102, 111, 112), language="swedish")
 
   expect_equal(
     adtl_nums, using_toOrdinal
@@ -25,6 +25,6 @@ test_that("toOrdinal correctly processes integers 101, 102, 111, and 112 in Swed
 test_that("toOrdinal correctly errors when given a negative integer.",{
 
   expect_error(
-    toOrdinal(-1), "Number supplied to 'toOrdinal' must be a non-negative integer."
+    toOrdinal(-1), "cardinal_number are not all non-negative"
   )
 })

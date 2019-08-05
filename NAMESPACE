@@ -1,5 +1,8 @@
 import(testthat)
 export(toOrdinal)
 export(toOrdinalDate)
+importFrom(assertive.numbers,assert_all_are_non_negative,assert_all_are_whole_numbers)
 importFrom(crayon,bold,green,magenta,red,yellow)
+importFrom(rlang,rep_along)
+importFrom(stringi,stri_sub)
 importFrom(utils,packageVersion)

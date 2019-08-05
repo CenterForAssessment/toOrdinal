@@ -1,15 +1,16 @@
 Package: toOrdinal
-Version: 1.1-0.0
-Date: 2019-2-22
+Version: 1.1-1.0
+Date: 2019-8-05
 Title: Cardinal to Ordinal Number & Date Conversion
 Description: Language specific cardinal to ordinal number conversion.
 Authors@R: c(person(given=c("Damian", "W."), family="Betebenner", email="dbetebenner@nciea.org", role=c("aut", "cre")),
                 person(given="Andrew", family="Martin", role="ctb"),
-		person(given="Jeff", family="Erickson", role="ctb"))
+		person(given="Jeff", family="Erickson", role="ctb"),
+		person(given="Richard", family="Cotton", role="ctb"))
 Maintainer: Damian W. Betebenner <dbetebenner@nciea.org>
 Depends: R (>= 3.3)
 Suggests: knitr, rmarkdown
-Imports: crayon, testthat
+Imports: assertive.numbers, crayon, rlang, stringi, testthat
 URL: https://CenterForAssessment.github.io/toOrdinal, https://github.com/CenterForAssessment/toOrdinal, https://cran.r-project.org/package=toOrdinal
 BugReports: https://github.com/CenterForAssessment/toOrdinal/issues
 VignetteBuilder: knitr

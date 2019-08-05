@@ -4,9 +4,9 @@
 \description{Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator (http://en.wikipedia.org/wiki/Ordinal_indicator) to the number.
 }
 \usage{
-toOrdinal(                                                  
+toOrdinal(
 	cardinal_number,
-	language="English",
+	language=c("ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH"),
 	convert_to="ordinal_number")
 }
 
@@ -18,23 +18,25 @@ toOrdinal(
   \item{convert_to}{OPTIONAL. Output type that provided 'cardinal_number' is converted into. Default is 'ordinal_number' which refers to the 'cardinal_number' followed by the appropriate ordinal
   indicator. Additional options planned include 'ordinal_word'.
   }
-} 
+}
 
 
 \details{Typical use of the function is to submit a positive integer for conversion to an ordinal number in the language specified. See examples.
 }
 
-\value{Function returns the ordinal number or ordinal word (as a character string). 
+\value{Function returns the ordinal number or ordinal word (as a character string).
 }
 
 \author{Damian W. Betebenner \email{dbetebenner@nciea.org} }
 
 \examples{
-toOrdinal(1)  ## 1st
-toOrdinal(1, language="French") ## 1re
-
-sapply(1:20, toOrdinal) ## 1st, 2nd, 3rd, ...
-sapply(1:20, toOrdinal, language="French") ## 1re, 2e, 3e, ...
+x <- c(1, 2, 3, 4, 11, 12, 13, 14, 21, 22, 23, 24, 101, 102, 103, 104, NA)
+toOrdinal(x) # English by default
+toOrdinal(x, "fr")
+toOrdinal(x, "german")
+toOrdinal(x, "german_alt")
+toOrdinal(x, "sp")
+toOrdinal(x, "sw")
 }
 
 \keyword{ misc }
