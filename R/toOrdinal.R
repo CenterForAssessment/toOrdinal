@@ -1,123 +1,64 @@
-`toOrdinal` <-
-function(
-	cardinal_number,
-	language="English",
-	convert_to="ordinal_number") {
+toOrdinal <- function(cardinal_number, language = c("ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH"), convert_to = "ordinal_number") {
+  assertive.numbers::assert_all_are_non_negative(cardinal_number, na_ignore = TRUE)
+  assertive.numbers::assert_all_are_whole_numbers(cardinal_number, na_ignore = TRUE)
+  language <- toupper(language)
+  language <- match.arg(language)
+  convert_to <- match.arg(convert_to)
+  suffix_fn <- get(paste0("get_suffix_", tolower(language)))
+  suffix <- suffix_fn(cardinal_number)
+  ordinal_number <- paste0(cardinal_number, suffix)
+  ordinal_number[is.na(cardinal_number)] <- NA_character_
+  ordinal_number
+}
 
+get_ones <- function(cardinal_number) {
+  stringi::stri_sub(cardinal_number, -1, -1)
+}
 
-	### Utility function
+get_tens <- function(cardinal_number) {
+  stringi::stri_sub(cardinal_number, -2, -2)
+}
 
-	strtail <- function(s, n=1) {
-		if(n < 0) substring(s, 1-n)
-		else substring(s, nchar(s)-n+1)
-	}
+get_suffix_english <- function(cardinal_number) {
+  ones <- get_ones(cardinal_number)
+  tens <- get_tens(cardinal_number)
+  suffix <- rlang::rep_along(cardinal_number, "th")
+  suffix[tens != "1" & ones == "1"] <- "st"
+  suffix[tens != "1" & ones == "2"] <- "nd"
+  suffix[tens != "1" & ones == "3"] <- "rd"
+  suffix
+}
 
+get_suffix_french <- function(cardinal_number) {
+  ones <- get_ones(cardinal_number)
+  suffix <- rlang::rep_along(cardinal_number, "e")
+  suffix[ones == "1"] <- "re"
+  suffix
+}
 
-	### Argument tests
+get_suffix_german <- function(cardinal_number) {
+  suffix <- rlang::rep_along(cardinal_number, ".")
+  suffix
+}
 
-	supported_languages_ordinal_number <- c("ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH")
-	supported_languages_ordinal_word <- ""
-	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 0) stop("Number supplied to 'toOrdinal' must be a non-negative integer.", call.=FALSE)
+get_suffix_german_alt <- function(cardinal_number) {
+  tens <- get_tens(cardinal_number)
+  suffix <- rlang::rep_along(cardinal_number, "ste")
+  suffix[tens %in% 0:1] <- "te"
+  suffix
+}
 
+get_suffix_spanish <- function(cardinal_number) {
+  ones <- get_ones(cardinal_number)
+  suffix <- rlang::rep_along(cardinal_number, ".\u00BA")
+  suffix[ones %in% c("1", "3")] <- ".er"
+  suffix
+}
 
-	#######################################################
-	###
-	### convert_to ordinal_number
-	###
-	#######################################################
-
-	if (identical(toupper(convert_to), "ORDINAL_NUMBER")) {
-
-		if (!toupper(language) %in% supported_languages_ordinal_number) stop(paste("Language supplied (", language, ") is currently not supported by toOrdinal for conversion to an 'ordinal_number'. Currently supported languages include: ", paste(supported_languages_ordinal_number, collapse=", "), ". Please submit pull requests to https://github.com/CenterForAssessment/toOrdinal/pulls for additional language support.", sep=""), call.=FALSE)
-
-
-		### ENGLISH
-
-		if (toupper(language)=="ENGLISH") {
-			tmp <- strtail(as.character(cardinal_number), 2)
-			if (tmp %in% c('1', paste(c(0, 2:9), 1, sep=""))) tmp.suffix <- "st"
-			if (tmp %in% c('2', paste(c(0, 2:9), 2, sep=""))) tmp.suffix <- "nd"
-			if (tmp %in% c('3', paste(c(0, 2:9), 3, sep=""))) tmp.suffix <- "rd"
-			if (tmp %in% c('11', '12', '13')) tmp.suffix <- "th"
-			if (tmp %in% c('4', paste(0:9, 4, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('5', paste(0:9, 5, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('6', paste(0:9, 6, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('7', paste(0:9, 7, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('8', paste(0:9, 8, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('9', paste(0:9, 9, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('0', paste(0:9, 0, sep=""))) tmp.suffix <- "th"
-		}
-
-
-		### FRENCH
-
-		if (toupper(language)=="FRENCH") {
-			if (cardinal_number==1) tmp.suffix <- "re" else tmp.suffix <- "e"
-		}
-
-
-		### GERMAN (standard method of adding a suffix "." to the number)
-
-		if (toupper(language)=="GERMAN_ALT") {
-			if (cardinal_number >=0) tmp.suffix <- "."
-		}
-
-
-		### GERMAN (informal *te and *ste endings)
-
-		if (toupper(language)=="GERMAN") {
-			if (cardinal_number >=0 & cardinal_number <= 19) tmp.suffix <- "te"
-			if (cardinal_number >= 20) tmp.suffix <- "ste"
-		}
-
-
-		### SPANISH
-
-		if (toupper(language)=="SPANISH") {
-			tmp <- strtail(as.character(cardinal_number), 1)
-			if (tmp %in% c('1', '3')) tmp.suffix <- ".er"
-			if (tmp %in% c('0', '2', '4', '5', '6', '7', '8', '9')) tmp.suffix <- ".\u00BA"
-		}
-
-
-		### SWEDISH
-
-		if (toupper(language)=="SWEDISH") {
-		 	tmp_1char <- strtail(as.character(cardinal_number), 1)
-		 	tmp_2char <- strtail(as.character(cardinal_number), 2)
-		 	if (tmp_1char %in% c('0', '3', '4', '5', '6', '7', '8', '9') | tmp_2char %in% c('11', '12')) {
-				tmp.suffix <- ":e"
-			} else if (tmp_1char %in% c('1', '2')) {
-				tmp.suffix <- ":a"
-			}
-		}
-
-
-		### TURKISH
-
-		if (toupper(language)=="TURKISH") {
-		}
-
-		return(paste(cardinal_number, tmp.suffix, sep=""))
-
-	} ### if (identical(toupper(convert_to), "ORDINAL_NUMBER"))
-
-
-	######################################################################
-	###
-	### convert_to ordinal_word
-	###
-	######################################################################
-
-	if (identical(toupper(convert_to), "ORDINAL_WORD")) {
-
-		if (!toupper(language) %in% supported_languages_ordinal_word) stop(paste("Language supplied (", language, ") is currently not supported by toOrdinal for conversion to an 'ordinal_word'. Currently supported languages include: ", paste(supported_languages_ordinal_word, collapse=", "), ". Please submit pull requests to https://github.com/CenterForAssessment/toOrdinal/pulls for additional language support.", sep=""), call.=FALSE)
-
-
-		### ENGLISH
-
-
-
-
-	} ### if (identical(toupper(convert_to), "ORDINAL_WORD"))
-} ### END toOrdinal
+get_suffix_swedish <- function(cardinal_number) {
+  ones <- get_ones(cardinal_number)
+  tens <- get_tens(cardinal_number)
+  suffix <- rlang::rep_along(cardinal_number, ":e")
+  suffix[tens == "2" | (tens == "1" & !ones %in% c("1", "2"))] <- ":a"
+  suffix
+}
