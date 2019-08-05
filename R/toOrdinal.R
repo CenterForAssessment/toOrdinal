@@ -16,7 +16,11 @@ get_ones <- function(cardinal_number) {
 }
 
 get_tens <- function(cardinal_number) {
-  stringi::stri_sub(cardinal_number, -2, -2)
+  ifelse(
+    nchar(cardinal_number) == 1,
+    "0",
+    stringi::stri_sub(cardinal_number, -2, -2)
+  )
 }
 
 get_suffix_english <- function(cardinal_number) {
@@ -37,14 +41,14 @@ get_suffix_french <- function(cardinal_number) {
 }
 
 get_suffix_german <- function(cardinal_number) {
-  suffix <- rlang::rep_along(cardinal_number, ".")
+  tens <- get_tens(cardinal_number)
+  suffix <- rlang::rep_along(cardinal_number, "ste")
+  suffix[tens %in% c("0", "1")] <- "te"
   suffix
 }
 
 get_suffix_german_alt <- function(cardinal_number) {
-  tens <- get_tens(cardinal_number)
-  suffix <- rlang::rep_along(cardinal_number, "ste")
-  suffix[tens %in% 0:1] <- "te"
+  suffix <- rlang::rep_along(cardinal_number, ".")
   suffix
 }
 
@@ -59,6 +63,6 @@ get_suffix_swedish <- function(cardinal_number) {
   ones <- get_ones(cardinal_number)
   tens <- get_tens(cardinal_number)
   suffix <- rlang::rep_along(cardinal_number, ":e")
-  suffix[tens == "2" | (tens == "1" & !ones %in% c("1", "2"))] <- ":a"
+  suffix[tens != "1" & ones %in% c("1", "2")] <- ":a"
   suffix
 }
