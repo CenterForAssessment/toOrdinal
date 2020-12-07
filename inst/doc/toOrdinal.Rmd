@@ -58,7 +58,7 @@ toOrdinal(5, language="Spanish")
 toOrdinal(5, language="Swedish")
 ```
 
-Current languages supported include: English, German, French, Spanish, and Swedish.
+Current languages supported include: Dutch, English, German, French, Spanish, and Swedish.
 
 Since Version 1.1, the function `toOrdinalDate` converts calendar dates to a long format, ordinal form.
 
