@@ -1,0 +1,35 @@
+---
+title: "toOrdinal 1.2-0.0"
+date: "December 18th, 2020"
+---
+
+```{r, echo = FALSE}
+is_html_output = function() {
+  knitr::opts_knit$get("rmarkdown.pandoc.to")=="html"
+}
+knitr::opts_chunk$set(collapse = TRUE, comment = "", prompt=TRUE, fig.dpi = 96)
+if (is_html_output()) {
+    options(width=1000)
+}
+require(toOrdinal, quietly=TRUE)
+```
+
+
+This is 1.2 release of the **toOrdinal** package.  This release includes support for Dutch thanks to @huisman:
+
+```{r}
+toOrdinal(1, language="Dutch")
+```
+
+This release also updates the [web-documentation](https://CenterForAssessment.github.io/toOrdinal) for the package. 
+
+* English: toOrdinal(1) returns '1st'
+* German: toOrdinal(1, language="German") returns '1te'
+* French: toOrdinal(1, language="French") returns '1re'
+* Spanish: toOrdinal(1, language="Spanish") returns '1.er'
+* Swedish: toOrdinal(1, language="Swedish") returns '1:a'
+* Dutch: toOrdinal(1, language="Dutch") returns '1ste'
+
+See the new [Getting Started Vignette](https://centerforassessment.github.io/toOrdinal/articles/toOrdinal.html) for more information.
+
+Feel free to drop me a line with any comments, feature requests, or ideas. And give us a shout-out Tweet using the Twitter button in the upper right!
