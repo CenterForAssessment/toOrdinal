@@ -86,6 +86,9 @@
   <ul class="dropdown-menu" role="menu">
     <li class="dropdown-header">Release notes</li>
     <li>
+      <a href="../articles/releases/toOrdinal-1.2-0.0.html">toOrdinal 1.2-0.0</a>
+    </li>
+    <li>
       <a href="../articles/releases/toOrdinal-1.1-0.0.html">toOrdinal 1.1-0.0</a>
     </li>
     <li>
@@ -126,15 +129,13 @@
     <h1>Cardinal to ordinal number conversion function</h1>
     </div>
 
-    
     <p>Function for converting cardinal to ordinal numbers by adding a language specific ordinal indicator (http://en.wikipedia.org/wiki/Ordinal_indicator) to the number.</p>
-    
 
     <pre class="usage"><span class='fu'>toOrdinal</span>(
         <span class='no'>cardinal_number</span>,
         <span class='kw'>language</span><span class='kw'>=</span><span class='st'>"English"</span>,
         <span class='kw'>convert_to</span><span class='kw'>=</span><span class='st'>"ordinal_number"</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -152,15 +153,13 @@
   indicator. Additional options planned include 'ordinal_word'.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Typical use of the function is to submit a positive integer for conversion to an ordinal number in the language specified. See examples.</p>
-    
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Function returns the ordinal number or ordinal word (as a character string).</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>toOrdinal</span>(<span class='fl'>1</span>)  <span class='co'>## 1st</span></div><div class='output co'>#&gt; [1] "1st"</div><div class='input'><span class='fu'>toOrdinal</span>(<span class='fl'>1</span>, <span class='kw'>language</span><span class='kw'>=</span><span class='st'>"French"</span>) <span class='co'>## 1re</span></div><div class='output co'>#&gt; [1] "1re"</div><div class='input'>
@@ -172,11 +171,8 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#details">Details</a></li>
-
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

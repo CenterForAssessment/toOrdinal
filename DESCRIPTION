@@ -1,6 +1,6 @@
 Package: toOrdinal
-Version: 1.1-0.0
-Date: 2019-2-22
+Version: 1.2-0.0
+Date: 2020-12-18
 Title: Cardinal to Ordinal Number & Date Conversion
 Description: Language specific cardinal to ordinal number conversion.
 Authors@R: c(person(given=c("Damian", "W."), family="Betebenner", email="dbetebenner@nciea.org", role=c("aut", "cre")),

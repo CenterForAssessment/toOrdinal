@@ -21,6 +21,8 @@ navbar:
     - text: News
       menu:
       - text: "Release notes"
+      - text: "toOrdinal 1.2-0.0"
+        href: articles/releases/toOrdinal-1.2-0.0.html
       - text: "toOrdinal 1.1-0.0"
         href: articles/releases/toOrdinal-1.1-0.0.html
       - text: "toOrdinal 1.0-0.0"
