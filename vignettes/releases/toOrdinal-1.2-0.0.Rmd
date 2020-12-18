@@ -15,7 +15,7 @@ require(toOrdinal, quietly=TRUE)
 ```
 
 
-This is 1.2 release of the **toOrdinal** package.  This release includes support for Dutch:
+This is 1.2 release of the **toOrdinal** package.  This release includes support for Dutch thanks to @huisman:
 
 ```{r}
 toOrdinal(1, language="Dutch")
