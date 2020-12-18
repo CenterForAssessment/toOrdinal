@@ -15,7 +15,7 @@ function(
 
 	### Argument tests
 
-	supported_languages_ordinal_number <- c("ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH")
+	supported_languages_ordinal_number <- c("DUTCH", "ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH")
 	supported_languages_ordinal_word <- ""
 	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 0) stop("Number supplied to 'toOrdinal' must be a non-negative integer.", call.=FALSE)
 
@@ -31,6 +31,18 @@ function(
 		if (!toupper(language) %in% supported_languages_ordinal_number) stop(paste("Language supplied (", language, ") is currently not supported by toOrdinal for conversion to an 'ordinal_number'. Currently supported languages include: ", paste(supported_languages_ordinal_number, collapse=", "), ". Please submit pull requests to https://github.com/CenterForAssessment/toOrdinal/pulls for additional language support.", sep=""), call.=FALSE)
 
 
+	  ### DUTCH
+	  
+	  if (toupper(language)=="DUTCH") {
+	    tmp <- strtail(as.character(cardinal_number), 2)
+	    tmp.suffix <- "ste"
+	    if (tmp %in% c('8', paste(0, 8, sep=""))) tmp.suffix <- "ste"
+	    if (tmp %in% c('1', paste(c(0, 2:9), 1, sep=""))) tmp.suffix <- "ste"
+	    if (tmp %in% c(0, 2:7, 9, paste(0, c(2:7,9) , sep=""))) tmp.suffix <- "de"
+	    if (tmp %in% paste(1, 0:9 , sep="")) tmp.suffix <- "de"
+	  }
+	  
+	  
 		### ENGLISH
 
 		if (toupper(language)=="ENGLISH") {

@@ -28,9 +28,10 @@ if (is_html_output()) {
 # Introduction
 
 The package **toOrdinal** contains a single function `toOrdinal` that converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th).
-Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements English,
+Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements Dutch, English,
 French, German, Spanish, and Swedish. For example,
 
+* Dutch: toOrdinal(1, language="Dutch") returns '1ste'
 * English: toOrdinal(1) returns '1st'
 * German: toOrdinal(1, language="German") returns '1te'
 * French: toOrdinal(1, language="French") returns '1re'
@@ -52,6 +53,7 @@ toOrdinal(5)
 Conversion in other languages are performed by supplying the appropriate language to the `language` argument:
 
 ```{r}
+toOrdinal(5, language="Dutch")
 toOrdinal(5, language="German")
 toOrdinal(5, language="French")
 toOrdinal(5, language="Spanish")
