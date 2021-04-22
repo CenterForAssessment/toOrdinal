@@ -16,6 +16,7 @@ Because such conversions are language specific, the conversions are specific to 
 French, German, Spanish, and Swedish. For example,
 
 * English: toOrdinal(1) returns '1st'
+* Dutch: toOrdinal(1, language="Dutch") returns '1ste'
 * German: toOrdinal(1, language="German") returns '1te'
 * French: toOrdinal(1, language="French") returns '1re'
 * Spanish: toOrdinal(1, language="Spanish") returns '1.er'
