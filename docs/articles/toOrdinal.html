@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="toOrdinal • Getting started with toOrdinal">
 <meta name="twitter:description" content="toOrdinal • Getting started with toOrdinal">
 <title>toOrdinal • Getting started with toOrdinal</title>
-<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- Fonts --><link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400" rel="stylesheet" type="text/css">
 <!-- packagePages --><link href="../packagePages.css" rel="stylesheet">
 <link href="../pkgdown.css" rel="stylesheet">
@@ -75,13 +75,13 @@
 </li>
         <li>
   <a href="https://github.com/centerforassessment/toOrdinal">
-    <span class="fa fa-github"></span>
+    <span class="fab fa-github"></span>
      
   </a>
 </li>
 <li>
-   <a style="cursor:pointer" onclick="window.open('https://twitter.com/intent/tweet?url=https%3A%2F%2Fcenterforassessment.github.io%2FtoOrdinal&amp;via=dbetebenner&amp;text=toOrdinal%3A%20R%20package%20to%20convert%20cardinal%20to%20ordinal%20numbers&amp;hashtags=toOrdinal%2C%20rstats','','scrollbars=0,menubar=0,height=300,width=600,resizable=0,toolbar=0,location=0,status=0')">
-    <span class="fa fa-twitter"></span>
+   <a style="cursor:pointer" onclick="window.open('https://twitter.com/intent/tweet?url=https%3A%2F%2Fcenterforassessment.github.io%2FtoOrdinal&amp;via=dbetebenner&amp;text=toOrdinal%3A%20R%20package%20to%20convert%20cardinal%20to%20ordinal%20numbers&amp;hashtags=toOrdinal%2Crstats','','scrollbars=0,menubar=0,height=300,width=600,resizable=0,toolbar=0,location=0,status=0')">
+    <span class="fab fa-twitter"></span>
      
   </a>
 </li>
@@ -94,14 +94,13 @@
 <!--/.navbar -->
 
       
-      </header><link href="toOrdinal_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="toOrdinal_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="toOrdinal_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
       <h1>Getting started with toOrdinal</h1>
                         <h4 class="author">Damian W Betebenner</h4>
             
-            <h4 class="date">December 18th, 2020</h4>
+            <h4 class="date">April 21st, 2021</h4>
           </div>
 
     
@@ -125,32 +124,32 @@
 <a href="#use" class="anchor"></a>Use</h1>
 <p>After <a href="../index.html#installation">installing</a> the package from either CRAN or GitHub, it’s simple to convert a cardinal to an ordinal number.</p>
 <p>To convert cardinal to ordinal numbers in English (the default), supply the cardinal number to <code>toOrdinal</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">[<span class="dv">1</span>] <span class="st">"5th"</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinal</span>(<span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"5th"</span></span></code></pre></div>
 <p>Conversion in other languages are performed by supplying the appropriate language to the <code>language</code> argument:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"Dutch"</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">[<span class="dv">1</span>] <span class="st">"5de"</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"German"</span>)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">[<span class="dv">1</span>] <span class="st">"5te"</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"French"</span>)</a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">[<span class="dv">1</span>] <span class="st">"5e"</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"Spanish"</span>)</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">[<span class="dv">1</span>] <span class="st">"5.º"</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinal.html">toOrdinal</a></span>(<span class="dv">5</span>, <span class="dt">language=</span><span class="st">"Swedish"</span>)</a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">[<span class="dv">1</span>] <span class="st">"5:e"</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinal</span>(<span class="dv">5</span>, <span class="at">language=</span><span class="st">"Dutch"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"5de"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinal</span>(<span class="dv">5</span>, <span class="at">language=</span><span class="st">"German"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"5te"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinal</span>(<span class="dv">5</span>, <span class="at">language=</span><span class="st">"French"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"5e"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinal</span>(<span class="dv">5</span>, <span class="at">language=</span><span class="st">"Spanish"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"5.º"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinal</span>(<span class="dv">5</span>, <span class="at">language=</span><span class="st">"Swedish"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"5:e"</span></span></code></pre></div>
 <p>Current languages supported include: English, German, French, Spanish, and Swedish.</p>
 <p>Since Version 1.1, the function <code>toOrdinalDate</code> converts calendar dates to a long format, ordinal form.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinalDate.html">toOrdinalDate</a></span>()</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">[<span class="dv">1</span>] <span class="st">"December 18th, 2020"</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="../reference/toOrdinalDate.html">toOrdinalDate</a></span>(<span class="st">"2017-12-25"</span>)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">[<span class="dv">1</span>] <span class="st">"December 25th, 2017"</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinalDate</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"April 21st, 2021"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinalDate</span>(<span class="st">"2017-12-25"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"December 25th, 2017"</span></span></code></pre></div>
 <p>If no argument is provided to <code>toOrdinalDate</code>, then the current date derived from <code>Sys.date()</code> is used to create the ordinal version of the calendar date. If a date is supplied, then it must be supplied as a character string of the form “YYYY-MM-DD” that is then converted to the more formal date format. Like with the function <code>toOrdinal</code> the potential exists for multiple language support with <code>toOrdinalDate</code>. However, the only language currently supported by <code>toOrdinalDate</code> is English.</p>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
 <p>The first argument, <code>n</code>, is the cardinal number to be converted to an ordinal number:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, toOrdinal)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"> [<span class="dv">1</span>] <span class="st">"1st"</span>  <span class="st">"2nd"</span>  <span class="st">"3rd"</span>  <span class="st">"4th"</span>  <span class="st">"5th"</span>  <span class="st">"6th"</span>  <span class="st">"7th"</span>  <span class="st">"8th"</span>  <span class="st">"9th"</span>  <span class="st">"10th"</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, toOrdinal)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> [<span class="dv">1</span>] <span class="st">"1st"</span>  <span class="st">"2nd"</span>  <span class="st">"3rd"</span>  <span class="st">"4th"</span>  <span class="st">"5th"</span>  <span class="st">"6th"</span>  <span class="st">"7th"</span>  <span class="st">"8th"</span>  <span class="st">"9th"</span>  <span class="st">"10th"</span></span></code></pre></div>
 </div>
 </div>
 <div id="contributions-requests" class="section level1">
@@ -168,7 +167,8 @@
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#introduction">Introduction</a></li>
       <li>
-<a href="#use">Use</a><ul class="nav nav-pills nav-stacked">
+<a href="#use">Use</a>
+      <ul class="nav nav-pills nav-stacked">
 <li><a href="#examples">Examples</a></li>
       </ul>
 </li>

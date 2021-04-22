@@ -1,3 +1,7 @@
+# toOrdinal 1.2-0.0
+
+* Added support for Dutch (Thanks @huisman)
+
 # toOrdinal 1.1-0.0
 
 * Updated GitHub-pages website and documentation

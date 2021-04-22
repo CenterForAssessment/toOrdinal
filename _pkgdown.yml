@@ -33,10 +33,10 @@ navbar:
       - text: "Change log"
         href: news/index.html
     right:
-      - icon: fa-github
+      - icon: fab fa-github
         href: https://github.com/centerforassessment/toOrdinal
-      - icon: fa-twitter
-        href: https://twitter.com/intent/tweet?url=https%3A%2F%2Fcenterforassessment.github.io%2FtoOrdinal&via=dbetebenner&text=toOrdinal%3A%20R%20package%20to%20convert%20cardinal%20to%20ordinal%20numbers&hashtags=toOrdinal%2C%20rstats
+      - icon: fab fa-twitter
+        href: https://twitter.com/intent/tweet?url=https%3A%2F%2Fcenterforassessment.github.io%2FtoOrdinal&via=dbetebenner&text=toOrdinal%3A%20R%20package%20to%20convert%20cardinal%20to%20ordinal%20numbers&hashtags=toOrdinal%2Crstats
 
 
 reference:
