@@ -100,7 +100,7 @@
       <h1>Getting started with toOrdinal</h1>
                         <h4 class="author">Damian W Betebenner</h4>
             
-            <h4 class="date">April 21st, 2021</h4>
+            <h4 class="date">April 24th, 2021</h4>
           </div>
 
     
@@ -140,7 +140,7 @@
 <p>Current languages supported include: English, German, French, Spanish, and Swedish.</p>
 <p>Since Version 1.1, the function <code>toOrdinalDate</code> converts calendar dates to a long format, ordinal form.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinalDate</span>()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"April 21st, 2021"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"April 24th, 2021"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinalDate</span>(<span class="st">"2017-12-25"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"December 25th, 2017"</span></span></code></pre></div>
 <p>If no argument is provided to <code>toOrdinalDate</code>, then the current date derived from <code>Sys.date()</code> is used to create the ordinal version of the calendar date. If a date is supplied, then it must be supplied as a character string of the form “YYYY-MM-DD” that is then converted to the more formal date format. Like with the function <code>toOrdinal</code> the potential exists for multiple language support with <code>toOrdinalDate</code>. However, the only language currently supported by <code>toOrdinalDate</code> is English.</p>
