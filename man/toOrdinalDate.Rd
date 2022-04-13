@@ -29,6 +29,8 @@ toOrdinalDate(
 toOrdinalDate()
 toOrdinalDate("2017-10-9") ## October 9th, 2017
 toOrdinalDate("2017-10-09") ## October 9th, 2017
+toOrdinalDate(c("2022-11-21", "2019-1-3", "1976-2-2", "1965-2-18"))
+## "November 21st, 2022" "January 3rd, 2019" "February 2nd, 1976" "February 18th, 1965"
 }
 
 \keyword{ misc }

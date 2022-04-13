@@ -4,7 +4,7 @@ toOrdinal
 [![R-CMD-check](https://github.com/CenterForAssessment/toOrdinal/workflows/R-CMD-check/badge.svg)](https://github.com/CenterForAssessment/toOrdinal/actions)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/centerforassessment/toOrdinal?branch=master&svg=true)](https://ci.appveyor.com/project/centerforassessment/toOrdinal)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/toOrdinal)](http://cran.r-project.org/package=toOrdinal)
-[![Development Version](https://img.shields.io/badge/devel-1.2--0.0-brightgreen.svg)](https://github.com/CenterForAssessment/toOrdinal)
+[![Development Version](https://img.shields.io/badge/devel-1.3--0.0-brightgreen.svg)](https://github.com/CenterForAssessment/toOrdinal)
 [![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg?style=flat)](https://github.com/CenterForAssessment/toOrdinal/blob/master/LICENSE.md)
 [![Join the chat at https://gitter.im/CenterForAssessment/toOrdinal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CenterForAssessment/toOrdinal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
