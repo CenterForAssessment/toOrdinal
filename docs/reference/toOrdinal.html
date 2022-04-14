@@ -78,7 +78,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
      
     <span class="caret"></span>
@@ -163,9 +163,10 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>toOrdinal</span>(<span class='fl'>1</span>)  <span class='co'>## 1st</span></div><div class='output co'>#&gt; [1] "1st"</div><div class='input'><span class='fu'>toOrdinal</span>(<span class='fl'>1</span>, <span class='kw'>language</span><span class='kw'>=</span><span class='st'>"French"</span>) <span class='co'>## 1re</span></div><div class='output co'>#&gt; [1] "1re"</div><div class='input'>
-<span class='fu'>sapply</span>(<span class='fl'>1</span>:<span class='fl'>20</span>, <span class='no'>toOrdinal</span>) <span class='co'>## 1st, 2nd, 3rd, ...</span></div><div class='output co'>#&gt;  [1] "1st"  "2nd"  "3rd"  "4th"  "5th"  "6th"  "7th"  "8th"  "9th"  "10th"
-#&gt; [11] "11th" "12th" "13th" "14th" "15th" "16th" "17th" "18th" "19th" "20th"</div><div class='input'><span class='fu'>sapply</span>(<span class='fl'>1</span>:<span class='fl'>20</span>, <span class='no'>toOrdinal</span>, <span class='kw'>language</span><span class='kw'>=</span><span class='st'>"French"</span>) <span class='co'>## 1re, 2e, 3e, ...</span></div><div class='output co'>#&gt;  [1] "1re" "2e"  "3e"  "4e"  "5e"  "6e"  "7e"  "8e"  "9e"  "10e" "11e" "12e"
-#&gt; [13] "13e" "14e" "15e" "16e" "17e" "18e" "19e" "20e"</div></pre>
+<span class='fu'>toOrdinal</span>(<span class='fl'>1</span>:<span class='fl'>20</span>) <span class='co'>## 1st, 2nd, 3rd, ...</span></div><div class='output co'>#&gt;  [1] "1st"  "2nd"  "3rd"  "4th"  "5th"  "6th"  "7th"  "8th"  "9th"  "10th"
+#&gt; [11] "11th" "12th" "13th" "14th" "15th" "16th" "17th" "18th" "19th" "20th"</div><div class='input'><span class='fu'>toOrdinal</span>(<span class='fl'>1</span>:<span class='fl'>25</span>, <span class='kw'>language</span><span class='kw'>=</span><span class='st'>"French"</span>) <span class='co'>## 1re, 2e, 3e, ...</span></div><div class='output co'>#&gt;  [1] "1re" "2e"  "3e"  "4e"  "5e"  "6e"  "7e"  "8e"  "9e"  "10e" "11e" "12e"
+#&gt; [13] "13e" "14e" "15e" "16e" "17e" "18e" "19e" "20e" "21e" "22e" "23e" "24e"
+#&gt; [25] "25e"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -187,7 +188,7 @@
 </div>
 
 <div class="author">
-  <p>Developed & Maintained by <a href='https://github.com/dbetebenner'><img src='https://centerforassessment.github.io/assets/dbetebenner.png' height='20' /> Damian W. Betebenner</a>.</p>
+  <p>Developed & Maintained by <a href='https://github.com/dbetebenner'><img class='img-author' src='https://centerforassessment.github.io/assets/dbetebenner.png' height='20' /> Damian W. Betebenner</a>.</p>
 </div>
 
 <script>

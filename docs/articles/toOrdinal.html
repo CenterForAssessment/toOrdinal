@@ -48,7 +48,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     News
      
     <span class="caret"></span>
@@ -94,21 +94,23 @@
 <!--/.navbar -->
 
       
-      </header><script src="toOrdinal_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
+      </header><script src="toOrdinal_files/header-attrs-2.13/header-attrs.js"></script><link href="toOrdinal_files/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet">
+<link href="toOrdinal_files/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet">
+<script src="toOrdinal_files/anchor-sections-1.1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
       <h1>Getting started with toOrdinal</h1>
                         <h4 class="author">Damian W Betebenner</h4>
             
-            <h4 class="date">April 24th, 2021</h4>
           </div>
 
     
     
 <div class="contents">
-<div id="introduction" class="section level1">
+<div id="introduction" class="section level1 hasAnchor">
 <h1 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h1>
+<a href="#introduction" class="anchor" aria-hidden="true"></a>Introduction<a href="#introduction" class="anchor-section" aria-label="Anchor link to header"></a>
+</h1>
 <p>The package <strong>toOrdinal</strong> contains a single function <code>toOrdinal</code> that converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th). Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements Dutch, English, French, German, Spanish, and Swedish. For example,</p>
 <ul>
 <li>Dutch: toOrdinal(1, language=“Dutch”) returns ‘1ste’</li>
@@ -119,9 +121,10 @@
 <li>Swedish: toOrdinal(1, language=“Swedish”) returns ‘1:a’</li>
 </ul>
 </div>
-<div id="use" class="section level1">
+<div id="use" class="section level1 hasAnchor">
 <h1 class="hasAnchor">
-<a href="#use" class="anchor"></a>Use</h1>
+<a href="#use" class="anchor" aria-hidden="true"></a>Use<a href="#use" class="anchor-section" aria-label="Anchor link to header"></a>
+</h1>
 <p>After <a href="../index.html#installation">installing</a> the package from either CRAN or GitHub, it’s simple to convert a cardinal to an ordinal number.</p>
 <p>To convert cardinal to ordinal numbers in English (the default), supply the cardinal number to <code>toOrdinal</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinal</span>(<span class="dv">5</span>)</span>
@@ -140,21 +143,23 @@
 <p>Current languages supported include: English, German, French, Spanish, and Swedish.</p>
 <p>Since Version 1.1, the function <code>toOrdinalDate</code> converts calendar dates to a long format, ordinal form.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinalDate</span>()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"April 24th, 2021"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">toOrdinalDate</span>(<span class="st">"2017-12-25"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"December 25th, 2017"</span></span></code></pre></div>
 <p>If no argument is provided to <code>toOrdinalDate</code>, then the current date derived from <code>Sys.date()</code> is used to create the ordinal version of the calendar date. If a date is supplied, then it must be supplied as a character string of the form “YYYY-MM-DD” that is then converted to the more formal date format. Like with the function <code>toOrdinal</code> the potential exists for multiple language support with <code>toOrdinalDate</code>. However, the only language currently supported by <code>toOrdinalDate</code> is English.</p>
-<div id="examples" class="section level2">
+<div id="examples" class="section level2 hasAnchor">
 <h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
+<a href="#examples" class="anchor" aria-hidden="true"></a>Examples<a href="#examples" class="anchor-section" aria-label="Anchor link to header"></a>
+</h2>
 <p>The first argument, <code>n</code>, is the cardinal number to be converted to an ordinal number:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, toOrdinal)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> [<span class="dv">1</span>] <span class="st">"1st"</span>  <span class="st">"2nd"</span>  <span class="st">"3rd"</span>  <span class="st">"4th"</span>  <span class="st">"5th"</span>  <span class="st">"6th"</span>  <span class="st">"7th"</span>  <span class="st">"8th"</span>  <span class="st">"9th"</span>  <span class="st">"10th"</span></span></code></pre></div>
 </div>
 </div>
-<div id="contributions-requests" class="section level1">
+<div id="contributions-requests" class="section level1 hasAnchor">
 <h1 class="hasAnchor">
-<a href="#contributions-requests" class="anchor"></a>Contributions &amp; Requests</h1>
+<a href="#contributions-requests" class="anchor" aria-hidden="true"></a>Contributions &amp; Requests<a href="#contributions-requests" class="anchor-section" aria-label="Anchor link to header"></a>
+</h1>
 <p>If you have contribution (for example, another language) or a feature request for the <strong>toOrdinal</strong> package, don’t hesitate to write or set up an <a href="https://github.com/CenterForAssessment/toOrdinal/issues">issue on GitHub</a>. Current new features include the possiblity of converting cardinal numbers to ordinal words (e.g., 8 to eighth).</p>
 </div>
 </div>
@@ -165,14 +170,14 @@
         <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
+<li><a href="#introduction">Introduction<span></span></a></li>
       <li>
-<a href="#use">Use</a>
+<a href="#use">Use<span></span></a>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#examples">Examples</a></li>
+<li><a href="#examples">Examples<span></span></a></li>
       </ul>
 </li>
-      <li><a href="#contributions-requests">Contributions &amp; Requests</a></li>
+      <li><a href="#contributions-requests">Contributions &amp; Requests<span></span></a></li>
       </ul>
 </div>
       </div>
@@ -185,7 +190,7 @@
 </div>
 
 <div class="author">
-  <p>Developed &amp; Maintained by <a href="https://github.com/dbetebenner"><img src="https://centerforassessment.github.io/assets/dbetebenner.png" height="20"> Damian W. Betebenner</a>.</p>
+  <p>Developed &amp; Maintained by <a href="https://github.com/dbetebenner"><img class="img-author" src="https://centerforassessment.github.io/assets/dbetebenner.png" height="20"> Damian W. Betebenner</a>.</p>
 </div>
 
 <script>
