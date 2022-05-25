@@ -1,0 +1,20 @@
+---
+title: "toOrdinal 1.3-0.0"
+date: "May 25th, 2022"
+---
+
+```{r, echo = FALSE}
+is_html_output = function() {
+  knitr::opts_knit$get("rmarkdown.pandoc.to")=="html"
+}
+knitr::opts_chunk$set(collapse = TRUE, comment = "", prompt=TRUE, fig.dpi = 96)
+if (is_html_output()) {
+    options(width=1000)
+}
+require(toOrdinal, quietly=TRUE)
+```
+
+
+This is 1.3 release of the **toOrdinal** package.  This release updates some bugs and updates documentation.
+
+Feel free to drop me a line with any comments, feature requests, or ideas. And give us a shout-out Tweet using the Twitter button in the upper right!
