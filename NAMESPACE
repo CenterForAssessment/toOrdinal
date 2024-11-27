@@ -1,4 +1,4 @@
 export(toOrdinal)
 export(toOrdinalDate)
 importFrom(crayon,bold,green,magenta,red,yellow)
-importFrom(utils,packageVersion)
+importFrom(utils,packageVersion,tail)
