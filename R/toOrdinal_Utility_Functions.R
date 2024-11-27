@@ -1,150 +1,101 @@
-###
 ### toOrdinal_INTERNAL
-###
-`toOrdinal_INTERNAL` <-
-function(
-	cardinal_number,
-	language="English",
-	convert_to="ordinal_number") {
+`toOrdinal_INTERNAL` <- 
+function(cardinal_number, 
+		language = "English", 
+		convert_to = "ordinal_number") {
 
-
-	### Utility function
-
-	strtail <- function(s, n=1) {
-		if(n < 0) substring(s, 1-n)
-		else substring(s, nchar(s)-n+1)
+	### Tests of arguments
+	if (floor(cardinal_number) != cardinal_number || cardinal_number < 0) {
+	    stop("Number supplied to 'toOrdinal' must be a non-negative integer.", call. = FALSE)
 	}
 
+	supported_languages <- c("DUTCH", "ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH", "TURKISH")
+	if (!toupper(language) %in% supported_languages) {
+	    stop(paste("Language", language, "is not supported. Supported languages:", 
+	               paste(supported_languages, collapse = ", ")), call. = FALSE)
+ 	}
 
-	### Argument tests
+	### ORDINAL_NUMBER
+	if (gsub("_", " ", toupper(convert_to))=="ORDINAL NUMBER") {
 
-	supported_languages_ordinal_number <- c("DUTCH", "ENGLISH", "FRENCH", "GERMAN", "GERMAN_ALT", "SPANISH", "SWEDISH")
-	supported_languages_ordinal_word <- ""
-	if (floor(cardinal_number)!=cardinal_number | cardinal_number < 0) stop("Number supplied to 'toOrdinal' must be a non-negative integer.", call.=FALSE)
+		# Suffix handling by language
+		suffix <- switch(toupper(language),
+			"DUTCH" = {
+				suffix <- if (cardinal_number %% 100 >= 11 && cardinal_number %% 100 <= 19) {
+					"de" # Numbers from 11 to 19 always use "de"
+				} else if (cardinal_number %% 10 == 1 || cardinal_number %% 10 == 8 || cardinal_number %% 10 == 0) {
+					"ste" # Numbers ending in 1, 8, or 0 use "ste"
+				} else {
+					"de" # All other cases use "de"
+				}
+			},
+			"ENGLISH" = {
+				tmp <- strTail(as.character(cardinal_number), 2)
+				if (tmp %in% c("11", "12", "13")) "th" else {
+					last <- strTail(tmp, 1)
+					c("st", "nd", "rd", "th")[(match(last, c("1", "2", "3", "0"), nomatch = 4))]
+				}
+			},
+				"FRENCH" = if (cardinal_number == 1) "re" else "e",
+				"GERMAN" = if (cardinal_number <= 19) "te" else "ste",
+			"GERMAN_ALT" = ".",
+			"SPANISH" = {
+				last <- strTail(as.character(cardinal_number), 1)
+				if (last %in% c("1", "3")) ".er" else "..\u00BA"
+			},
+			"SWEDISH" = {
+				tmp_1char <- strTail(as.character(cardinal_number), 1)
+				tmp_2char <- strTail(as.character(cardinal_number), 2)
+				if (tmp_2char %in% c("11", "12") || tmp_1char %in% c("0", "3", "4", "5", "6", "7", "8", "9")) ":e" else ":a"
+			},
+			"TURKISH" = {
+				"."
+			},
+			stop("Language logic not implemented.")
+		) ### END switch
 
+		return(paste0(cardinal_number, suffix))
+	} ### END if "ORDINAL_NUMBER"
 
-	#######################################################
-	###
-	### convert_to ordinal_number
-	###
-	#######################################################
+	if (gsub("_", " ", toupper(convert_to))=="ORDINAL WORD") {
 
-	if (identical(toupper(convert_to), "ORDINAL_NUMBER")) {
+			# Suffix handling by language
+		ordinal_word <- switch(toupper(language),
+			"DUTCH" = {
+				stop("Language logic not implemented.")
+			},
+			"ENGLISH" = {
+				stop("Language logic not implemented.")
+			},
+			"FRENCH" = {
+				stop("Language logic not implemented.")
+			},
+			"GERMAN" = {
+				stop("Language logic not implemented.")
+			},
+			"GERMAN_ALT" = {
+				stop("Language logic not implemented.")
+			},
+			"SPANISH" = {
+				stop("Language logic not implemented.")
+			},
+			"SWEDISH" = {
+				stop("Language logic not implemented.")
+			},
+			"TURKISH" = {
+				word <- get_turkish_number_word(cardinal_number)
+			    return(paste0(word, turkish_ordinal_suffix(word)))
+			},
+			stop("Language logic not implemented.")
+		) ### END switch
+	} ### END if "ORDINAL_WORD"
+} ### END toOrdinal_INTERNAL
 
-		if (!toupper(language) %in% supported_languages_ordinal_number) stop(paste("Language supplied (", language, ") is currently not supported by toOrdinal for conversion to an 'ordinal_number'. Currently supported languages include: ", paste(supported_languages_ordinal_number, collapse=", "), ". Please submit pull requests to https://github.com/CenterForAssessment/toOrdinal/pulls for additional language support.", sep=""), call.=FALSE)
-
-
-	  ### DUTCH
-	  
-	  if (toupper(language)=="DUTCH") {
-	    tmp <- strtail(as.character(cardinal_number), 2)
-	    tmp.suffix <- "ste"
-	    if (tmp %in% c('8', paste(0, 8, sep=""))) tmp.suffix <- "ste"
-	    if (tmp %in% c('1', paste(c(0, 2:9), 1, sep=""))) tmp.suffix <- "ste"
-	    if (tmp %in% c(0, 2:7, 9, paste(0, c(2:7,9) , sep=""))) tmp.suffix <- "de"
-	    if (tmp %in% paste(1, 0:9 , sep="")) tmp.suffix <- "de"
-	  }
-	  
-	  
-		### ENGLISH
-
-		if (toupper(language)=="ENGLISH") {
-			tmp <- strtail(as.character(cardinal_number), 2)
-			if (tmp %in% c('1', paste(c(0, 2:9), 1, sep=""))) tmp.suffix <- "st"
-			if (tmp %in% c('2', paste(c(0, 2:9), 2, sep=""))) tmp.suffix <- "nd"
-			if (tmp %in% c('3', paste(c(0, 2:9), 3, sep=""))) tmp.suffix <- "rd"
-			if (tmp %in% c('11', '12', '13')) tmp.suffix <- "th"
-			if (tmp %in% c('4', paste(0:9, 4, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('5', paste(0:9, 5, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('6', paste(0:9, 6, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('7', paste(0:9, 7, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('8', paste(0:9, 8, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('9', paste(0:9, 9, sep=""))) tmp.suffix <- "th"
-			if (tmp %in% c('0', paste(0:9, 0, sep=""))) tmp.suffix <- "th"
-		}
-
-
-		### FRENCH
-
-		if (toupper(language)=="FRENCH") {
-			if (cardinal_number==1) tmp.suffix <- "re" else tmp.suffix <- "e"
-		}
-
-
-		### GERMAN (standard method of adding a suffix "." to the number)
-
-		if (toupper(language)=="GERMAN_ALT") {
-			if (cardinal_number >=0) tmp.suffix <- "."
-		}
-
-
-		### GERMAN (informal *te and *ste endings)
-
-		if (toupper(language)=="GERMAN") {
-			if (cardinal_number >=0 & cardinal_number <= 19) tmp.suffix <- "te"
-			if (cardinal_number >= 20) tmp.suffix <- "ste"
-		}
-
-
-		### SPANISH
-
-		if (toupper(language)=="SPANISH") {
-			tmp <- strtail(as.character(cardinal_number), 1)
-			if (tmp %in% c('1', '3')) tmp.suffix <- ".er"
-			if (tmp %in% c('0', '2', '4', '5', '6', '7', '8', '9')) tmp.suffix <- ".\u00BA"
-		}
-
-
-		### SWEDISH
-
-		if (toupper(language)=="SWEDISH") {
-		 	tmp_1char <- strtail(as.character(cardinal_number), 1)
-		 	tmp_2char <- strtail(as.character(cardinal_number), 2)
-		 	if (tmp_1char %in% c('0', '3', '4', '5', '6', '7', '8', '9') | tmp_2char %in% c('11', '12')) {
-				tmp.suffix <- ":e"
-			} else if (tmp_1char %in% c('1', '2')) {
-				tmp.suffix <- ":a"
-			}
-		}
-
-
-		### TURKISH
-
-		if (toupper(language)=="TURKISH") {
-		}
-
-		return(paste(cardinal_number, tmp.suffix, sep=""))
-
-	} ### if (identical(toupper(convert_to), "ORDINAL_NUMBER"))
-
-
-	######################################################################
-	###
-	### convert_to ordinal_word
-	###
-	######################################################################
-
-	if (identical(toupper(convert_to), "ORDINAL_WORD")) {
-
-		if (!toupper(language) %in% supported_languages_ordinal_word) stop(paste("Language supplied (", language, ") is currently not supported by toOrdinal for conversion to an 'ordinal_word'. Currently supported languages include: ", paste(supported_languages_ordinal_word, collapse=", "), ". Please submit pull requests to https://github.com/CenterForAssessment/toOrdinal/pulls for additional language support.", sep=""), call.=FALSE)
-
-
-		### ENGLISH
-
-
-
-
-	} ### if (identical(toupper(convert_to), "ORDINAL_WORD"))
-} ### END toOrdinal
-
-###
 ### toOrdinalDate_INTERNAL
-###
 `toOrdinalDate_INTERNAL` <-
 function(
     date=NULL,
 	language="English") {
-
 
         ### ENGLISH
 
@@ -155,4 +106,80 @@ function(
 
         ### OTHER LANGUAGES
 
-} ### END toOrdinalDate
+} ### END toOrdinalDate_INTERNAL
+
+### strTail
+`strTail` <- 
+function(
+	string,
+	n_char = 1) {
+
+  # Ensure n_char is an integer and within valid bounds
+  if (!is.numeric(n_char) || n_char != as.integer(n_char)) {
+    stop("n_char must be an integer.")
+  }
+
+  # Apply the function to each element of the vector
+  result <- sapply(string, function(str) {
+    if (!is.character(str)) stop("Each element must be a character string.")
+
+    string_len <- nchar(str)
+
+    if (abs(n_char) > string_len && n_char > 0) n_char <- string_len
+    if (abs(n_char) > string_len && n_char < 0) n_char <- -string_len
+
+    if (n_char < 0) substr(str, -n_char + 1, string_len)
+    else substr(str, max(1, string_len - n_char + 1), string_len)
+  })
+
+  names(result) <- NULL  # Remove names from the result
+  return(result)
+} ### END strTail
+
+# Function to get Turkish word for number
+get_turkish_number_word <- function(number) {
+	turkish_number_words <- c(
+		"1" = "bir", "2" = "iki", "3" = "\u00FC\u00E7", "4" = "d\u00F6rt", "5" = "be\u015F",
+		"6" = "alt\u0131", "7" = "yedi", "8" = "sekiz", "9" = "dokuz", "10" = "on",
+		"20" = "yirmi", "30" = "otuz", "40" = "k\u0131rk", "50" = "elli",
+		"60" = "altm\u0131\u015F", "70" = "yetmi\u015F", "80" = "seksen", "90" = "doksan",
+		"100" = "y\u00FCz", "200" = "iki y\u00FCz", "300" = "\u00FC\u00E7 y\u00FCz", "400" = "d\u00F6rt y\u00FCz",
+		"500" = "be\u015F y\u00FCz", "600" = "alt\u0131 y\u00FCz", "700" = "yedi y\u00FCz",
+		"800" = "sekiz y\u00FCz", "900" = "dokuz y\u00FCz"
+	)
+  
+  if (number %in% as.numeric(names(turkish_number_words))) {
+    return(turkish_number_words[as.character(number)])
+  } else if (number < 1000) {
+    hundreds <- as.character(floor(number / 100) * 100)
+    remainder <- number %% 100
+    if (remainder == 0) {
+      return(turkish_number_words[hundreds])
+    } else {
+      return(paste(turkish_number_words[hundreds], get_turkish_number_word(remainder)))
+    }
+  } else {
+    stop("Numbers above 999 are not currently supported.")
+  }
+} ### END get_turkish_number_word
+
+# Turkish ordinal suffix logic
+`turkish_ordinal_suffix` <- 
+function(
+	word) {
+
+	vowels <- c("a", "\u0131", "o", "u", "e", "i", "\u00F6", "\u00FC")
+    last_vowel <- tail(unlist(strsplit(word, ""))[unlist(strsplit(word, "")) %in% vowels], 1)
+
+	if (last_vowel %in% c("a", "\u0131")) {
+		suffix <- "\u0131nc\u0131"
+	} else if (last_vowel %in% c("o", "u")) {
+		suffix <- "uncu"
+	} else if (last_vowel %in% c("e", "i")) {
+		suffix <- "inci"
+	} else if (last_vowel %in% c("\u00F6", "\u00FC")) {
+		suffix <- "\u00FCnc\u00FC"
+	}
+
+    return(suffix)
+  } ### END turkish_ordinal_suffix
