@@ -4,12 +4,12 @@ bibentry(
     title        = "{toOrdinal}: Function for Converting Cardinal to Ordinal Numbers by Adding a Language Specific Ordinal Indicator to the Number.",
     author       = person(given = c("Damian", "W."), family = "Betebenner"),
     year         = "2024",
-    note         = "R package version 1.3-9.0",
+    note         = "R package version 1.3-9.1",
     url          = "https://centerforassessment.github.io/toOrdinal/",
     textVersion  = paste(
                     "Damian W. Betebenner (2024).",
                     "{toOrdinal}: Function for Converting Cardinal to Ordinal Numbers by Adding a Language Specific Ordinal Indicator to the Number.",
-                    "(R package version 1.3-9.0)",
+                    "(R package version 1.3-9.1)",
                     "URL: https://centerforassessment.github.io/toOrdinal/"
                   )
 )
