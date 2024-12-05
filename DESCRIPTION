@@ -9,7 +9,7 @@ Authors@R: c(person(given=c("Damian", "W."), family="Betebenner", email="dbetebe
 Maintainer: Damian W. Betebenner <dbetebenner@nciea.org>
 Depends: R (>= 3.3)
 Suggests: knitr, rmarkdown, testthat
-Imports: crayon
+Imports: crayon, pkgsearch
 URL: https://centerforassessment.github.io/toOrdinal/, https://github.com/centerforassessment/toOrdinal/, https://cran.r-project.org/package=toOrdinal
 BugReports: https://github.com/centerforassessment/toOrdinal/issues/
 VignetteBuilder: knitr
