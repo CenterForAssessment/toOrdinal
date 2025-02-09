@@ -12,7 +12,7 @@ toOrdinal
 # Overview
 
 The R package **toOrdinal** contains a single function `toOrdinal` that converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th).
-Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements English, 
+Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements English, Dutch,
 French, German, Spanish, and Swedish. For example,
 
 * English: toOrdinal(1) returns '1st'
@@ -47,6 +47,9 @@ To install the development release of **toOrdinal** from [GitHub](https://github
 ```
 > toOrdinal(5)
 [1] "5th"
+
+> toOrdinal(5, language="Dutch")
+[1] "5de"
 
 > toOrdinal(5, language="German")
 [1] "5te"

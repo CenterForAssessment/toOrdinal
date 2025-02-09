@@ -21,13 +21,16 @@ function(cardinal_number,
 		# Suffix handling by language
 		suffix <- switch(toupper(language),
 			"DUTCH" = {
-				suffix <- if (cardinal_number %% 100 >= 11 && cardinal_number %% 100 <= 19) {
-					"de" # Numbers from 11 to 19 always use "de"
-				} else if (cardinal_number %% 10 == 1 || cardinal_number %% 10 == 8 || cardinal_number %% 10 == 0) {
-					"ste" # Numbers ending in 1, 8, or 0 use "ste"
-				} else {
-					"de" # All other cases use "de"
-				}
+				# Take the number formed by the last two digits of the cardinal number
+				tmp_2int <- cardinal_number %% 100 
+				# Suffix defaults to 'ste' with a couple of exceptions where the suffix is 'de':
+				# 	the cardinal number is exactly 0, or 
+				#	the number formed by the last the two digits is smaller than 20, but not equal to 1 or 8.
+				suffix <- if ((cardinal_number == 0 || (tmp_2int > 1 && tmp_2int < 20)) && tmp_2int != 8) {
+                			'de'
+               		      } else {
+                 			'ste'
+               			  }
 			},
 			"ENGLISH" = {
 				tmp <- strTail(as.character(cardinal_number), 2)
