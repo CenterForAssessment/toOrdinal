@@ -1,18 +1,21 @@
 Package: toOrdinal
-Version: 1.3-9.1
-Date: 2024-12-3
+Version: 1.5-0.0
+Date: 2026-10-31
 Title: Cardinal to Ordinal Number & Date Conversion
-Description: Language specific cardinal to ordinal number conversion.
-Authors@R: c(person(given=c("Damian", "W."), family="Betebenner", email="dbetebenner@nciea.org", role=c("aut", "cre")),
-                person(given="Andrew", family="Martin", role="ctb"),
-		person(given="Jeff", family="Erickson", role="ctb"))
-Maintainer: Damian W. Betebenner <dbetebenner@nciea.org>
-Depends: R (>= 3.3)
-Suggests: knitr, rmarkdown, testthat
-Imports: crayon, pkgsearch
+Description: Converts cardinal numbers to ordinal numbers (for example 1 to 1st) using language specific rules for Dutch, English, French, German, Spanish, Swedish and Turkish, converts calendar dates to a long form with an ordinal day (October 9th, 2017), and converts Turkish numbers to ordinal words.
+Authors@R: c(
+    person("Damian W.", "Betebenner", email = "dbetebenner@nciea.org", role = c("aut", "cre")),
+    person("Andrew", "Martin", role = "ctb"),
+    person("Jeff", "Erickson", role = "ctb"),
+    person("Center for Assessment", role = "cph"))
+Depends: R (>= 4.1)
+Imports: cli, utils
+Suggests: knitr, rmarkdown, testthat (>= 3.0.0), withr
 URL: https://centerforassessment.github.io/toOrdinal/, https://github.com/centerforassessment/toOrdinal/, https://cran.r-project.org/package=toOrdinal
 BugReports: https://github.com/centerforassessment/toOrdinal/issues/
 VignetteBuilder: knitr
-LazyLoad: Yes
-ByteCompile: TRUE
+Encoding: UTF-8
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
 License: GPL-3
+Config/roxygen2/version: 8.1.0

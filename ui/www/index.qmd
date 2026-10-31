@@ -1,0 +1,100 @@
+---
+pagetitle: "toOrdinal: Cardinal to Ordinal Number & Date Conversion"
+page-layout: article
+toc: false
+---
+
+```{=html}
+<section class="pkg-hero" aria-labelledby="pkg-name">
+  <img class="pkg-hex" src="assets/brand/logo.svg" alt="toOrdinal hex logo">
+  <div>
+    <p id="pkg-name" class="pkg-name" role="heading" aria-level="1">toOrdinal</p>
+    <p class="pkg-tagline">Cardinal to Ordinal Number & Date Conversion</p>
+    <ul class="pill-links">
+  <li><a href="https://github.com/CenterForAssessment/toOrdinal">GitHub</a></li>
+  <li><a href="https://CRAN.R-project.org/package=toOrdinal">CRAN</a></li>
+  <li><a href="articles/toOrdinal.html">Get started</a></li>
+  <li><a href="reference/index.html">Reference</a></li>
+    </ul>
+  </div>
+</section>
+```
+
+## Overview
+
+**toOrdinal** converts a cardinal number (9) into its ordinal counterpart (9th). Because ordinal indicators are language specific, the conversion follows the rules of the language you choose. It also writes calendar dates in long form with an ordinal day, and spells out Turkish ordinal words.
+
+| Language | `toOrdinal(1, language = ...)` |
+|:---------|:-------------------------------|
+| English (default) | `1st` |
+| Dutch | `1ste` |
+| French | `1re` |
+| German | `1te` |
+| German, with a period (`"German_alt"`) | `1.` |
+| Spanish | `1.er` |
+| Swedish | `1:a` |
+| Turkish | `1.` |
+
+## Installation
+
+From [CRAN](https://CRAN.R-project.org/package=toOrdinal):
+
+``` r
+install.packages("toOrdinal")
+```
+
+The development version from [GitHub](https://github.com/CenterForAssessment/toOrdinal/):
+
+``` r
+# install.packages("pak")
+pak::pak("CenterForAssessment/toOrdinal")
+```
+
+## Usage
+
+``` r
+library(toOrdinal)
+
+toOrdinal(5)
+#> [1] "5th"
+
+toOrdinal(1:4, language = "French")
+#> [1] "1re" "2e"  "3e"  "4e"
+
+toOrdinal(5, language = "Spanish")
+#> [1] "5.º"
+
+toOrdinal(c(11, 21, 100000))
+#> [1] "11th"     "21st"     "100000th"
+
+toOrdinal(21, language = "Turkish", convert_to = "ordinal_word")
+#> [1] "yirmi birinci"
+
+toOrdinalDate("2017-10-9")
+#> [1] "October 9th, 2017"
+```
+
+`toOrdinalDate()` with no argument gives today's date. Month names are always English, whatever your locale; English is the only language it implements.
+
+## The startup message
+
+In an interactive session the package prints a short banner that compares the installed version with CRAN and GitHub. It waits at most two seconds for each request. Switch it off with
+
+``` r
+options(toOrdinal.startup_message = FALSE)
+```
+
+or set the environment variable `TOORDINAL_QUIET=true`. It never runs in scripts, `R CMD check` or on a server.
+
+## Resources
+
+- [Website](https://centerforassessment.github.io/toOrdinal/)
+- [CRAN](https://CRAN.R-project.org/package=toOrdinal)
+- [Issues](https://github.com/CenterForAssessment/toOrdinal/issues)
+
+## Contributing
+
+To add a language or ask for a feature, open an [issue](https://github.com/CenterForAssessment/toOrdinal/issues) or send a pull request with the rules for the language.
+
+Maintained by [Damian Betebenner](https://github.com/dbetebenner) at the [Center for Assessment](https://www.nciea.org/).
+

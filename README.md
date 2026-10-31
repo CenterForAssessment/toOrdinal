@@ -1,77 +1,85 @@
-toOrdinal
-===========
+# toOrdinal <a href="https://centerforassessment.github.io/toOrdinal/"><img src="man/figures/logo.svg" align="right" height="139" alt="toOrdinal hex logo" /></a>
 
-[![R-CMD-check](https://github.com/CenterForAssessment/toOrdinal/workflows/R-CMD-check/badge.svg)](https://github.com/CenterForAssessment/toOrdinal/actions)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/centerforassessment/toOrdinal?branch=master&svg=true)](https://ci.appveyor.com/project/centerforassessment/toOrdinal)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/toOrdinal)](http://cran.r-project.org/package=toOrdinal)
-[![Development Version](https://img.shields.io/badge/devel-1.3--1.0-brightgreen.svg)](https://github.com/CenterForAssessment/toOrdinal)
-[![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg?style=flat)](https://github.com/CenterForAssessment/toOrdinal/blob/master/LICENSE.md)
-[![Join the chat at https://gitter.im/CenterForAssessment/toOrdinal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CenterForAssessment/toOrdinal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/CenterForAssessment/toOrdinal/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CenterForAssessment/toOrdinal/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/toOrdinal)](https://CRAN.R-project.org/package=toOrdinal)
+[![License: GPL v3](https://img.shields.io/badge/license-GPL%203-blue.svg)](https://github.com/CenterForAssessment/toOrdinal/blob/master/LICENSE.md)
+<!-- badges: end -->
 
+## Overview
 
-# Overview
+**toOrdinal** converts a cardinal number (9) into its ordinal counterpart (9th). Because ordinal indicators are language specific, the conversion follows the rules of the language you choose. It also writes calendar dates in long form with an ordinal day, and spells out Turkish ordinal words.
 
-The R package **toOrdinal** contains a single function `toOrdinal` that converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th).
-Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements English, 
-French, German, Spanish, and Swedish. For example,
+| Language | `toOrdinal(1, language = ...)` |
+|:---------|:-------------------------------|
+| English (default) | `1st` |
+| Dutch | `1ste` |
+| French | `1re` |
+| German | `1te` |
+| German, with a period (`"German_alt"`) | `1.` |
+| Spanish | `1.er` |
+| Swedish | `1:a` |
+| Turkish | `1.` |
 
-* English: toOrdinal(1) returns '1st'
-* Dutch: toOrdinal(1, language="Dutch") returns '1ste'
-* German: toOrdinal(1, language="German") returns '1te'
-* French: toOrdinal(1, language="French") returns '1re'
-* Spanish: toOrdinal(1, language="Spanish") returns '1.er'
-* Swedish: toOrdinal(1, language="Swedish") returns '1:a'
+## Installation
 
+From [CRAN](https://CRAN.R-project.org/package=toOrdinal):
 
-# Installation
-
-## From [CRAN](https://CRAN.R-project.org/package=toOrdinal)
-
-To install the latest stable release of **toOrdinal** from [CRAN](https://CRAN.R-project.org/package=toOrdinal)
-
-```R
-> install.packages("toOrdinal")
+``` r
+install.packages("toOrdinal")
 ```
 
-## From [Github](https://github.com/CenterForAssessment/toOrdinal/)
+The development version from [GitHub](https://github.com/CenterForAssessment/toOrdinal/):
 
-To install the development release of **toOrdinal** from [GitHub](https://github.com/CenterForAssessment/toOrdinal/):
-
-```R
-> devtools::install_github("CenterForAssessment/toOrdinal")
+``` r
+# install.packages("pak")
+pak::pak("CenterForAssessment/toOrdinal")
 ```
 
+## Usage
 
-# Usage
+``` r
+library(toOrdinal)
 
+toOrdinal(5)
+#> [1] "5th"
+
+toOrdinal(1:4, language = "French")
+#> [1] "1re" "2e"  "3e"  "4e"
+
+toOrdinal(5, language = "Spanish")
+#> [1] "5.º"
+
+toOrdinal(c(11, 21, 100000))
+#> [1] "11th"     "21st"     "100000th"
+
+toOrdinal(21, language = "Turkish", convert_to = "ordinal_word")
+#> [1] "yirmi birinci"
+
+toOrdinalDate("2017-10-9")
+#> [1] "October 9th, 2017"
 ```
-> toOrdinal(5)
-[1] "5th"
 
-> toOrdinal(5, language="German")
-[1] "5te"
+`toOrdinalDate()` with no argument gives today's date. Month names are always English, whatever your locale; English is the only language it implements.
 
-> toOrdinal(5, language="French")
-[1] "5e"
+## The startup message
 
-> toOrdinal(5, language="Spanish")
-[1] "5.º"
+In an interactive session the package prints a short banner that compares the installed version with CRAN and GitHub. It waits at most two seconds for each request. Switch it off with
 
-> toOrdinal(5, language="Swedish")
-1] "5:e"
+``` r
+options(toOrdinal.startup_message = FALSE)
 ```
 
+or set the environment variable `TOORDINAL_QUIET=true`. It never runs in scripts, `R CMD check` or on a server.
 
-# Resources
+## Resources
 
-* [toOrdinal GitHub Pages](https://CenterForAssessment.github.io/toOrdinal)
-* [CRAN Repo](https://CRAN.R-project.org/package=toOrdinal)
+- [Website](https://centerforassessment.github.io/toOrdinal/)
+- [CRAN](https://CRAN.R-project.org/package=toOrdinal)
+- [Issues](https://github.com/CenterForAssessment/toOrdinal/issues)
 
+## Contributing
 
-# Contributors
+To add a language or ask for a feature, open an [issue](https://github.com/CenterForAssessment/toOrdinal/issues) or send a pull request with the rules for the language.
 
-The **toOrdinal** Package is crafted with :heart: by:
-
-* [Damian Betebenner](https://github.com/dbetebenner)
-
-I love feedback and am happy to answer questions. Feel free to clone and make a pull request with the specifications for other languages.
+Maintained by [Damian Betebenner](https://github.com/dbetebenner) at the [Center for Assessment](https://www.nciea.org/).

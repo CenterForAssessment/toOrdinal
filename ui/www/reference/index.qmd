@@ -1,0 +1,17 @@
+---
+title: "Reference"
+toc: false
+---
+
+## Functions
+
+::: {.reference-index}
+
+[`toOrdinal()`](toOrdinal.html)
+:   Convert cardinal numbers to ordinal numbers or words
+
+[`toOrdinalDate()`](toOrdinalDate.html)
+:   Convert dates to long, ordinal calendar dates
+
+:::
+
