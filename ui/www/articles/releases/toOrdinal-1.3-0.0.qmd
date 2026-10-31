@@ -1,6 +1,6 @@
 ---
 title: "toOrdinal 1.3-0.0"
-date: "May 25th, 2022"
+date: "2022-05-25"
 toc: true
 ---
 
