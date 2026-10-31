@@ -6,7 +6,7 @@ toc: true
 
 ## Description
 
-![logo](../help/figures/logo.svg){style="float: right" width="120"}
+![logo](../assets/figures/logo.svg){style="float: right" width="120"}
 
 Converts cardinal numbers to ordinal numbers (for example 1 to 1st) using language specific rules for Dutch, English, French, German, Spanish, Swedish and Turkish, converts calendar dates to a long form with an ordinal day (October 9th, 2017), and converts Turkish numbers to ordinal words.
 
