@@ -1,0 +1,40 @@
+---
+title: "toOrdinal-package"
+subtitle: "toOrdinal: Cardinal to Ordinal Number & Date Conversion"
+toc: true
+---
+
+## Description
+
+![logo](../help/figures/logo.svg){style="float: right" width="120"}
+
+Converts cardinal numbers to ordinal numbers (for example 1 to 1st) using language specific rules for Dutch, English, French, German, Spanish, Swedish and Turkish, converts calendar dates to a long form with an ordinal day (October 9th, 2017), and converts Turkish numbers to ordinal words.
+
+## See Also
+
+Useful links:
+
+-   <https://centerforassessment.github.io/toOrdinal/>
+
+-   <https://github.com/centerforassessment/toOrdinal/>
+
+-   <https://cran.r-project.org/package=toOrdinal>
+
+-   Report bugs at <https://github.com/centerforassessment/toOrdinal/issues/>
+
+## Author(s)
+
+**Maintainer**: Damian W. Betebenner <dbetebenner@nciea.org>
+
+Authors:
+
+-   Damian W. Betebenner <dbetebenner@nciea.org>
+
+Other contributors:
+
+-   Andrew Martin \[contributor\]
+
+-   Jeff Erickson \[contributor\]
+
+-   Center for Assessment \[copyright holder\]
+

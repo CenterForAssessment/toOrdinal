@@ -27,22 +27,22 @@ if (is_html_output()) {
 
 # Introduction
 
-The package **toOrdinal** contains a single function `toOrdinal` that converts a cardinal number (e.g., 9) into its ordinal counterpart (e.g., 9th).
-Because such conversions are language specific, the conversions are specific to a supported language. At present, the package implements Dutch, English,
-French, German, Spanish, and Swedish. For example,
+The package **toOrdinal** converts a cardinal number (for example, 9) into its ordinal counterpart (9th).
+Because such conversions are language specific, the rules depend on the language you choose. At present the package implements Dutch, English,
+French, German, Spanish, Swedish and Turkish. For example,
 
-* Dutch: toOrdinal(1, language="Dutch") returns '1ste'
-* English: toOrdinal(1) returns '1st'
-* German: toOrdinal(1, language="German") returns '1te'
-* French: toOrdinal(1, language="French") returns '1re'
-* Spanish: toOrdinal(1, language="Spanish") returns '1.er'
-* Swedish: toOrdinal(1, language="Swedish") returns '1:a'
+* Dutch: `toOrdinal(1, language="Dutch")` returns '1ste'
+* English: `toOrdinal(1)` returns '1st'
+* German: `toOrdinal(1, language="German")` returns '1te'
+* French: `toOrdinal(1, language="French")` returns '1re'
+* Spanish: `toOrdinal(1, language="Spanish")` returns '1.er'
+* Swedish: `toOrdinal(1, language="Swedish")` returns '1:a'
+* Turkish: `toOrdinal(1, language="Turkish")` returns '1.'
 
 
 # Use
 
-After [installing](../index.html#installation) the package from either CRAN
-or GitHub, it's simple to convert a cardinal to an ordinal number.
+After [installing](https://centerforassessment.github.io/toOrdinal/#installation) the package from either CRAN or GitHub, it's simple to convert a cardinal to an ordinal number.
 
 To convert cardinal to ordinal numbers in English (the default), supply the cardinal number to `toOrdinal`.
 
@@ -50,9 +50,10 @@ To convert cardinal to ordinal numbers in English (the default), supply the card
 toOrdinal(5)
 ```
 
-Conversion in other languages are performed by supplying the appropriate language to the `language` argument:
+`toOrdinal` is vectorized, and conversions in other languages are performed by supplying the language to the `language` argument:
 
 ```{r}
+toOrdinal(1:10)
 toOrdinal(5, language="Dutch")
 toOrdinal(5, language="German")
 toOrdinal(5, language="French")
@@ -60,30 +61,37 @@ toOrdinal(5, language="Spanish")
 toOrdinal(5, language="Swedish")
 ```
 
-Current languages supported include: English, German, French, Spanish, and Swedish.
+Missing values are returned as `NA`. Anything that is not a non-negative whole number stops with an error:
 
-Since Version 1.1, the function `toOrdinalDate` converts calendar dates to a long format, ordinal form.
+```{r, error=TRUE}
+toOrdinal(c(1, NA, 3))
+toOrdinal(-1)
+```
+
+## Ordinal words
+
+For Turkish, `convert_to="ordinal_word"` spells the ordinal out for numbers up to 999. Other languages stop with an error rather than returning a guess.
+
+```{r}
+toOrdinal(c(1, 4, 21, 100), language="Turkish", convert_to="ordinal_word")
+```
+
+## Dates
+
+The function `toOrdinalDate` converts calendar dates to a long format with an ordinal day.
 
 ```{r}
 toOrdinalDate()
 toOrdinalDate("2017-12-25")
+toOrdinalDate(as.Date("2024-03-11"))
 ```
 
-If no argument is provided to `toOrdinalDate`, then the current date derived from `Sys.date()` is used to create the ordinal version of the calendar date.
-If a date is supplied, then it must be supplied as a character string of the form "YYYY-MM-DD" that is then converted to the more formal date format. Like with the function `toOrdinal`
-the potential exists for multiple language support with `toOrdinalDate`. However, the only language currently supported by `toOrdinalDate` is English.
+If no argument is provided, today's date is used. A date can be a character string such as "2017-12-25" or "2017-12-5", a `Date` or a `POSIXct`. Month names are always English, whatever the session locale, and English is the only language `toOrdinalDate` implements.
 
-## Examples
+## The startup message
 
-The first argument, `n`, is the cardinal number to be converted to an ordinal number:
-
-```{r}
-sapply(1:10, toOrdinal)
-```
-
-
+In an interactive session, attaching the package prints a banner that compares the installed version with CRAN and GitHub. It waits at most two seconds for each request. Turn it off with `options(toOrdinal.startup_message = FALSE)` or by setting the environment variable `TOORDINAL_QUIET=true`.
 
 # Contributions & Requests
 
-If you have contribution (for example, another language) or a feature request for the **toOrdinal** package, don't hesitate to write or set up an [issue on GitHub](https://github.com/CenterForAssessment/toOrdinal/issues). Current new features include the possiblity of converting cardinal numbers to ordinal words
-(e.g., 8 to eighth).
+If you have a contribution (for example, another language) or a feature request for the **toOrdinal** package, don't hesitate to write or set up an [issue on GitHub](https://github.com/CenterForAssessment/toOrdinal/issues).

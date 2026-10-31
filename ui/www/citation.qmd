@@ -1,0 +1,48 @@
+---
+title: "Citation and authors"
+toc: false
+---
+
+## Citation
+
+To cite this package in publications, please use:
+
+Betebenner DW (2026). _toOrdinal: Function for Converting Cardinal to Ordinal Numbers by Adding a Language
+Specific Ordinal Indicator to the Number._. R package version 1.5-0.0,
+<https://centerforassessment.github.io/toOrdinal/>.
+
+A BibTeX entry:
+
+```bibtex
+@Manual{,
+  title = {{toOrdinal}: Function for Converting Cardinal to Ordinal Numbers by Adding a Language Specific Ordinal Indicator to the Number.},
+  author = {Damian W. Betebenner},
+  year = {2026},
+  note = {R package version 1.5-0.0},
+  url = {https://centerforassessment.github.io/toOrdinal/},
+}
+```
+
+## Authors
+
+- Damian W. (aut, cre)
+- Betebenner (aut, cre)
+- aut, cre (aut, cre)
+- dbetebenner@nciea.org (aut, cre)
+- NULL (aut, cre)
+- Andrew (ctb)
+- Martin (ctb)
+- ctb (ctb)
+- NULL (ctb)
+- NULL (ctb)
+- Jeff (ctb)
+- Erickson (ctb)
+- ctb (ctb)
+- NULL (ctb)
+- NULL (ctb)
+- Center for Assessment (cph)
+- NULL (cph)
+- cph (cph)
+- NULL (cph)
+- NULL (cph)
+
